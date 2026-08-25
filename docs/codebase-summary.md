@@ -11,7 +11,7 @@ Website giới thiệu ứng dụng **Amor AI — a couple app**, port từ proj
 | UI | React 19.2, TypeScript strict |
 | Style | CSS custom properties + inline style (giữ nguyên cách viết của bản thiết kế) |
 | Font | `next/font/google`: Be Vietnam Pro, Lora. Material Symbols Rounded nạp qua `<link>` |
-| Render | Toàn bộ 11 route đều prerender tĩnh |
+| Render | Toàn bộ 20 route đều prerender tĩnh |
 
 ## Lệnh
 
@@ -39,22 +39,34 @@ Khi biến này có giá trị, config bỏ qua bước dựng server cục bộ
 ```
 src/
 ├── app/
-│   ├── layout.tsx          # font, bootstrap theme chống nháy, <PreferenceSync/>
-│   ├── icon.png            # icon tab (quy ước file App Router, 128×128)
+│   ├── root-shell.tsx      # khung <html>/<head>/<body> dùng chung cho hai root layout
 │   ├── globals.css         # design token Paper/Dusk + style thân bài blog
-│   ├── page.tsx            # metadata → home-page.tsx
-│   ├── home-page.tsx       # trang chủ (client, theo ngôn ngữ)
-│   ├── team|faq|privacy|terms/   # mỗi trang: page.tsx (metadata) + *-page.tsx (client)
-│   └── blog/               # blog/page.tsx + 4 bài (server component, chỉ tiếng Việt)
-├── components/             # site-nav, site-footer, store-badges, android-device,
+│   ├── icon.png            # icon tab (quy ước file App Router, 128×128)
+│   ├── sitemap.ts          # /sitemap.xml, sinh từ danh sách route + chỉ mục blog
+│   ├── robots.ts           # /robots.txt
+│   ├── (vi)/               # root layout <html lang="vi">
+│   │   ├── page.tsx        #   /
+│   │   ├── team|faq|privacy|terms/page.tsx
+│   │   ├── so-sanh/page.tsx    # landing page so sánh app đếm ngày yêu
+│   │   └── blog/           #   blog/page.tsx + 4 bài (chỉ tiếng Việt)
+│   └── (en)/               # root layout <html lang="en">
+│       └── en/{page,team,faq,privacy,terms}
+├── components/
+│   ├── pages/              # view client dùng chung cho cả hai ngôn ngữ
+│   │                       # (home, team, faq, privacy, terms)
+│   ├── json-ld.tsx         # chèn một khối structured data
+│   └── ...                 # site-nav, site-footer, store-badges, android-device,
 │                           # today-mockup, blog-article, legal-page, app-cta, material-icon
 └── lib/
-    ├── site.ts             # hằng số (playUrl, email, icon)
-    ├── preferences.ts      # useLang / useTheme qua useSyncExternalStore
+    ├── site.ts             # hằng số + localePath()/basePath() cho tiền tố /en
+    ├── seo.ts              # pageMetadata(), rootMetadata(), các builder JSON-LD
+    ├── preferences.ts      # useTheme qua useSyncExternalStore
     ├── persisted-store.ts  # store localStorage nhỏ, an toàn với SSR
     └── content/            # dữ liệu nội dung VI/EN tách khỏi phần trình bày
+                            # (home, faq, blog, team, privacy, terms, compare, keywords)
 
-e2e/                        # Playwright: routes, layout, preferences
+e2e/                        # Playwright: routes, layout, preferences, seo
+scripts/build-og-image.mjs  # dựng ảnh OpenGraph 1200×630 bằng Playwright
 playwright.config.ts        # cổng cố định 3210, chạy trên bản production
 ```
 
@@ -71,36 +83,77 @@ bản thiết kế: khối Premium (`#FFEDF1`…) và màn hình điện thoại
 
 ## Ngôn ngữ và theme
 
-- Lưu trong `localStorage`: `amor-lang` (`vi` | `en`), `amor-theme` (`paper` | `dusk`).
-- Đọc bằng `useSyncExternalStore` → server luôn render mặc định (`vi`/`paper`), không lệch hydrate.
-- Script inline trong `<head>` gắn `data-theme="dusk"` trước khi vẽ để không nháy sáng.
-- Trang blog chỉ có tiếng Việt: truyền `lang="vi" showLang={false}` cho `SiteNav`.
+**Ngôn ngữ nằm trong URL**, không nằm trong `localStorage`. Tiếng Việt ở gốc (`/faq`),
+tiếng Anh dưới tiền tố `/en` (`/en/faq`) — hai bản là hai trang riêng để Google index
+được cả hai. `localePath()` và `basePath()` trong `site.ts` là chỗ duy nhất biết quy
+tắc tiền tố này.
+
+- Mỗi ngôn ngữ có một root layout riêng trong route group `(vi)` / `(en)`. Đây là cách
+  duy nhất trong App Router để `<html lang>` được render sẵn ở server thay vì sửa bằng
+  JavaScript sau khi trang đã tải. Đổi VI↔EN sẽ tải lại trang — chấp nhận được vì đây
+  là thao tác hiếm.
+- Nút VI/EN trong `SiteNav` là `<Link>` trỏ tới chính trang đang xem ở ngôn ngữ kia,
+  suy ra từ `usePathname()`.
+- Trang blog và `/so-sanh` chỉ có tiếng Việt: truyền `lang="vi" showLang={false}` cho
+  `SiteNav` và đặt `bilingual: false` trong `pageMetadata` để không khai hreflang trỏ
+  tới URL không tồn tại.
+- Theme vẫn lưu trong `localStorage` (`amor-theme`: `paper` | `dusk`), đọc bằng
+  `useSyncExternalStore` → server luôn render mặc định, không lệch hydrate. Script
+  inline trong `<head>` gắn `data-theme="dusk"` trước khi vẽ để không nháy sáng.
 
 ## Bản đồ route
 
-| Route | Nguồn thiết kế |
-| --- | --- |
-| `/` | `index.dc.html` |
-| `/team` | `team.dc.html` |
-| `/blog` | `blog.dc.html` |
-| `/blog/cau-hoi-cap-doi` | `blog-cau-hoi-cap-doi.dc.html` |
-| `/blog/y-tuong-ky-niem-ngay-yeu` | `blog-y-tuong-ky-niem-ngay-yeu.dc.html` |
-| `/blog/viet-nhat-ky-cap-doi` | `blog-viet-nhat-ky-cap-doi.dc.html` |
-| `/blog/yeu-xa` | `blog-yeu-xa.dc.html` |
-| `/faq` | `faq.dc.html` |
-| `/privacy` | `privacy.dc.html` |
-| `/terms` | `terms.dc.html` |
+| Route | Ngôn ngữ | Nguồn thiết kế |
+| --- | --- | --- |
+| `/` · `/en` | VI · EN | `index.dc.html` |
+| `/team` · `/en/team` | VI · EN | `team.dc.html` |
+| `/faq` · `/en/faq` | VI · EN | `faq.dc.html` |
+| `/privacy` · `/en/privacy` | VI · EN | `privacy.dc.html` |
+| `/terms` · `/en/terms` | VI · EN | `terms.dc.html` |
+| `/so-sanh` | VI | mới, không có trong bản thiết kế |
+| `/blog` | VI | `blog.dc.html` |
+| `/blog/cau-hoi-cap-doi` | VI | `blog-cau-hoi-cap-doi.dc.html` |
+| `/blog/y-tuong-ky-niem-ngay-yeu` | VI | `blog-y-tuong-ky-niem-ngay-yeu.dc.html` |
+| `/blog/viet-nhat-ky-cap-doi` | VI | `blog-viet-nhat-ky-cap-doi.dc.html` |
+| `/blog/yeu-xa` | VI | `blog-yeu-xa.dc.html` |
+
+## SEO
+
+`src/lib/seo.ts` là nguồn duy nhất cho metadata và structured data.
+
+- **`pageMetadata()`** dựng canonical, hreflang (`vi`/`en`/`x-default`), OpenGraph và
+  Twitter card cho một route. **Mọi trang đều phải tự gọi hàm này**: Next không gộp
+  `alternates` theo chiều sâu, nên một trang quên khai báo sẽ thừa hưởng canonical của
+  layout và tự trỏ sai về trang chủ. `e2e/seo.spec.ts` kiểm tra điều này cho từng route.
+- **`rootMetadata()`** giữ phần dùng chung ở root layout: `metadataBase`, tác giả, nhà
+  xuất bản, chỉ thị `robots`. Không đặt canonical ở đây.
+- **JSON-LD** gom vào một khối `@graph` cho mỗi trang qua `<JsonLd/>`:
+  `MobileApplication` + `Organization` + `WebSite` ở trang chủ, `FAQPage` ở `/faq` và
+  `/so-sanh`, `BlogPosting` + `BreadcrumbList` ở mỗi bài viết (`BlogArticle` tự chèn),
+  `Blog` ở trang chỉ mục. Không khai `aggregateRating` vì chưa có nguồn đánh giá thật —
+  bịa số sao vi phạm chính sách rich result của Google.
+- **`sitemap.ts`** sinh `/sitemap.xml` từ danh sách route song ngữ, route VI-only và chỉ
+  mục blog; các cặp song ngữ khai `xhtml:link` chéo nhau. **`robots.ts`** cho phép thu
+  thập toàn site và trỏ tới sitemap.
+- **Ảnh chia sẻ** `public/og-image.png` (1200×630) dựng bằng
+  `node scripts/build-og-image.mjs` rồi commit — dùng Playwright thay vì `next/og` để
+  không phải tải font tiếng Việt lúc build.
+- **Ngày tháng blog** lưu dạng ISO trong `content/blog.ts` (`isoDate`) vì sitemap và
+  structured data đều cần dạng đó; `displayDate()` đổi sang `25.08.2026` để hiển thị.
+- **Từ khoá mục tiêu** liệt kê trong `content/keywords.ts`. Tên ứng dụng của bên thứ ba
+  chỉ xuất hiện ở `/so-sanh`, không nhồi vào tiêu đề hay mô tả trang chủ.
 
 ## Kiểm thử
 
 Playwright E2E, chạy trên bản production (`npm test` tự đóng gói rồi khởi động server
-ở cổng cố định 3210). 61 test / 3 file:
+ở cổng cố định 3210). 124 test / 4 file:
 
 | File | Bao phủ |
 | --- | --- |
-| `e2e/routes.spec.ts` | 10 route trả 200 + đúng `<title>`/`<h1>`, icon tab, icon PNG, điều hướng nội bộ, không có lỗi JS |
-| `e2e/layout.spec.ts` | Không cuộn ngang ở 1440/768/390 cho cả 10 route, khung điện thoại co vừa mobile, nav dính khi cuộn, thanh điều hướng thu gọn ở 720/390/320 |
-| `e2e/preferences.spec.ts` | Toggle VI/EN (đổi + lưu + giữ khi chuyển trang), toggle Paper/Dusk (đổi + lưu + không nháy sáng), blog ẩn nút ngôn ngữ, accordion FAQ |
+| `e2e/routes.spec.ts` | 16 route trả 200 + đúng `<title>`/`<h1>`, icon tab, icon PNG, điều hướng nội bộ, không có lỗi JS |
+| `e2e/layout.spec.ts` | Không cuộn ngang ở 1440/768/390 cho cả 16 route, khung điện thoại co vừa mobile, nav dính khi cuộn, thanh điều hướng thu gọn ở 720/390/320 |
+| `e2e/preferences.spec.ts` | Nút VI/EN điều hướng đúng URL và giữ nguyên trang đang xem, toggle Paper/Dusk (đổi + lưu + không nháy sáng), blog ẩn nút ngôn ngữ, accordion FAQ |
+| `e2e/seo.spec.ts` | Canonical/mô tả/OG/Twitter cho từng route, cặp hreflang, `robots.txt`, `sitemap.xml` đủ route, ảnh OG, các khối JSON-LD |
 
 CI: `.github/workflows/ci.yml` chạy lint → typecheck → E2E trên mỗi push vào `main` và
 mỗi pull request. Chạy tay qua `workflow_dispatch` với input `base_url` (`production`
