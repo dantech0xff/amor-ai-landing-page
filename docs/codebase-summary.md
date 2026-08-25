@@ -30,6 +30,7 @@ npm run test:ui # Playwright ở chế độ UI
 src/
 ├── app/
 │   ├── layout.tsx          # font, bootstrap theme chống nháy, <PreferenceSync/>
+│   ├── icon.png            # icon tab (quy ước file App Router, 128×128)
 │   ├── globals.css         # design token Paper/Dusk + style thân bài blog
 │   ├── page.tsx            # metadata → home-page.tsx
 │   ├── home-page.tsx       # trang chủ (client, theo ngôn ngữ)
@@ -83,11 +84,11 @@ bản thiết kế: khối Premium (`#FFEDF1`…) và màn hình điện thoại
 ## Kiểm thử
 
 Playwright E2E, chạy trên bản production (`npm test` tự đóng gói rồi khởi động server
-ở cổng cố định 3210). 60 test / 3 file:
+ở cổng cố định 3210). 61 test / 3 file:
 
 | File | Bao phủ |
 | --- | --- |
-| `e2e/routes.spec.ts` | 10 route trả 200 + đúng `<title>`/`<h1>`, icon PNG, điều hướng nội bộ, không có lỗi JS |
+| `e2e/routes.spec.ts` | 10 route trả 200 + đúng `<title>`/`<h1>`, icon tab, icon PNG, điều hướng nội bộ, không có lỗi JS |
 | `e2e/layout.spec.ts` | Không cuộn ngang ở 1440/768/390 cho cả 10 route, khung điện thoại co vừa mobile, nav dính khi cuộn, thanh điều hướng thu gọn ở 720/390/320 |
 | `e2e/preferences.spec.ts` | Toggle VI/EN (đổi + lưu + giữ khi chuyển trang), toggle Paper/Dusk (đổi + lưu + không nháy sáng), blog ẩn nút ngôn ngữ, accordion FAQ |
 

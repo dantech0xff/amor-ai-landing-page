@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   title: 'Amor AI — a couple app · Giữ lại nhịp yêu thương mỗi ngày',
   description:
     'Amor AI là ứng dụng dành cho cặp đôi: đếm ngày bên nhau, viết ký ức, câu hỏi mỗi ngày và widget ấm áp — riêng tư, không quảng cáo.',
-  icons: { icon: '/web_hi_res_512.png' },
+  // Icon tab lấy từ src/app/icon.png theo quy ước file của App Router.
 };
 
 /** Áp theme đã lưu trước khi trang vẽ, tránh nháy sáng khi đang ở Dusk. */

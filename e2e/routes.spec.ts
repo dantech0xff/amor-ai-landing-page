@@ -20,6 +20,26 @@ test('icon app được phục vụ dưới dạng PNG', async ({ request }) => 
   expect(response.headers()['content-type']).toContain('image/png');
 });
 
+test('icon tab là icon Amor AI, không phải favicon mặc định của Next', async ({
+  page,
+  request,
+}) => {
+  await page.goto('/');
+
+  const iconLinks = page.locator('link[rel~="icon"]');
+  await expect(iconLinks).toHaveCount(1);
+
+  const href = await iconLinks.first().getAttribute('href');
+  expect(href).toContain('/icon.png');
+
+  const icon = await request.get(href!);
+  expect(icon.status()).toBe(200);
+  expect(icon.headers()['content-type']).toContain('image/png');
+
+  // favicon.ico của create-next-app phải bị gỡ, nếu không nó thắng icon.png.
+  expect((await request.get('/favicon.ico')).status()).toBe(404);
+});
+
 test('điều hướng nội bộ hoạt động từ trang chủ tới bài blog', async ({
   page,
 }) => {
