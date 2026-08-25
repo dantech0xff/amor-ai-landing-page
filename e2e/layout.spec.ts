@@ -48,6 +48,66 @@ test.describe('mobile 390px', () => {
   });
 });
 
+test.describe('Thanh điều hướng thu gọn', () => {
+  test.describe('trên desktop', () => {
+    test.use({ viewport: { width: 1280, height: 900 } });
+
+    test('hiện đủ liên kết, không có nút menu', async ({ page }) => {
+      await page.goto('/');
+
+      await expect(page.locator('.site-nav__menu-toggle')).toBeHidden();
+      await expect(page.locator('.site-nav__links')).toBeVisible();
+      await expect(page.locator('.site-nav__cta')).toBeVisible();
+    });
+  });
+
+  for (const width of [720, 390, 320]) {
+    test.describe(`trên mobile ${width}px`, () => {
+      test.use({ viewport: { width, height: 844 } });
+
+      test('gói liên kết vào nút menu và giữ thanh trên một hàng', async ({
+        page,
+      }) => {
+        await page.goto('/');
+
+        await expect(page.locator('.site-nav__links')).toBeHidden();
+        await expect(page.locator('.site-nav__cta')).toBeHidden();
+
+        const toggle = page.locator('.site-nav__menu-toggle');
+        await expect(toggle).toBeVisible();
+
+        // Một hàng: cao khoảng 60px, không phải nhiều hàng do wrap.
+        const bar = page.locator('.site-nav__bar');
+        const closed = await bar.boundingBox();
+        expect(closed!.height).toBeLessThanOrEqual(72);
+      });
+
+      test('mở menu ra thì thấy liên kết, bấm vào thì chuyển trang và menu đóng', async ({
+        page,
+      }) => {
+        await page.goto('/');
+
+        const panel = page.locator('#site-nav-panel');
+        await expect(panel).toBeHidden();
+
+        await page.locator('.site-nav__menu-toggle').click();
+
+        await expect(panel).toBeVisible();
+        await expect(panel.getByRole('link', { name: 'Team' })).toBeVisible();
+        await expect(panel.getByRole('link', { name: 'Blog' })).toBeVisible();
+        await expect(
+          panel.getByRole('link', { name: 'Tải app' }),
+        ).toBeVisible();
+
+        await panel.getByRole('link', { name: 'Team' }).click();
+
+        await expect(page).toHaveURL('/team');
+        await expect(panel).toBeHidden();
+      });
+    });
+  }
+});
+
 test('thanh điều hướng dính khi cuộn', async ({ page }) => {
   await page.goto('/');
   await page.evaluate(() => window.scrollTo(0, 2000));

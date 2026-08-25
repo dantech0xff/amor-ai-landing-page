@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import { MaterialIcon } from './material-icon';
 import { useLang, useTheme } from '@/lib/preferences';
 import { SITE, type Lang } from '@/lib/site';
@@ -19,6 +20,26 @@ const linkStyle = {
   textDecoration: 'none',
 } as const;
 
+const ctaStyle = {
+  fontSize: 14,
+  fontWeight: 600,
+  color: 'var(--am-onlove)',
+  background: 'var(--am-love)',
+  borderRadius: 999,
+  padding: '10px 18px',
+  textDecoration: 'none',
+} as const;
+
+const roundButtonStyle = {
+  border: 'none',
+  cursor: 'pointer',
+  borderRadius: 999,
+  background: 'var(--am-inset)',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexShrink: 0,
+} as const;
+
 function langPillStyle(active: boolean) {
   return {
     border: 'none',
@@ -29,7 +50,6 @@ function langPillStyle(active: boolean) {
     color: active ? 'var(--am-ink)' : 'var(--am-ink3)',
     background: active ? 'var(--am-card)' : 'transparent',
     borderRadius: 999,
-    padding: '5px 11px',
     boxShadow: active ? '0 1px 4px var(--am-shadow1)' : undefined,
   } as const;
 }
@@ -41,6 +61,24 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
 
   const { theme, setTheme } = useTheme();
   const toggleTheme = () => setTheme(theme === 'dusk' ? 'paper' : 'dusk');
+
+  // Dưới 720px các liên kết và nút tải app chuyển vào panel thu gọn.
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
+
+  const navLinks = (
+    <>
+      <Link href="/#features" style={linkStyle} onClick={closeMenu}>
+        {vi ? 'Tính năng' : 'Features'}
+      </Link>
+      <Link href="/team" style={linkStyle} onClick={closeMenu}>
+        Team
+      </Link>
+      <Link href="/blog" style={linkStyle} onClick={closeMenu}>
+        Blog
+      </Link>
+    </>
+  );
 
   return (
     <div
@@ -54,13 +92,12 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
       }}
     >
       <div
+        className="site-nav__bar"
         style={{
           maxWidth: 1120,
           margin: '0 auto',
-          padding: '12px 24px',
           display: 'flex',
           alignItems: 'center',
-          gap: 18,
           flexWrap: 'wrap',
         }}
       >
@@ -71,6 +108,7 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
             alignItems: 'center',
             gap: 10,
             textDecoration: 'none',
+            minWidth: 0,
           }}
         >
           <Image
@@ -82,8 +120,8 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
             priority
           />
           <span
+            className="site-nav__wordmark"
             style={{
-              fontSize: 17,
               fontWeight: 700,
               color: 'var(--am-ink)',
               letterSpacing: '-0.01em',
@@ -92,6 +130,7 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
             Amor AI
           </span>
           <span
+            className="site-nav__badge"
             style={{
               fontSize: 10,
               fontWeight: 600,
@@ -101,6 +140,7 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
               background: 'var(--am-inset)',
               borderRadius: 999,
               padding: '4px 9px',
+              whiteSpace: 'nowrap',
             }}
           >
             a couple app
@@ -108,22 +148,10 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
         </Link>
 
         <nav
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 20,
-            flexWrap: 'wrap',
-          }}
+          className="site-nav__links"
+          style={{ alignItems: 'center', gap: 20, flexWrap: 'wrap' }}
         >
-          <Link href="/#features" style={linkStyle}>
-            {vi ? 'Tính năng' : 'Features'}
-          </Link>
-          <Link href="/team" style={linkStyle}>
-            Team
-          </Link>
-          <Link href="/blog" style={linkStyle}>
-            Blog
-          </Link>
+          {navLinks}
         </nav>
 
         <div
@@ -145,6 +173,7 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
             >
               <button
                 type="button"
+                className="site-nav__lang-pill"
                 onClick={() => setLang('vi')}
                 style={langPillStyle(vi)}
               >
@@ -152,6 +181,7 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
               </button>
               <button
                 type="button"
+                className="site-nav__lang-pill"
                 onClick={() => setLang('en')}
                 style={langPillStyle(!vi)}
               >
@@ -164,17 +194,8 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
             type="button"
             onClick={toggleTheme}
             aria-label="Theme"
-            style={{
-              border: 'none',
-              cursor: 'pointer',
-              width: 38,
-              height: 38,
-              borderRadius: 999,
-              background: 'var(--am-inset)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
+            className="site-nav__round-button"
+            style={{ ...roundButtonStyle, display: 'flex' }}
           >
             <MaterialIcon
               name={theme === 'dusk' ? 'light_mode' : 'dark_mode'}
@@ -185,21 +206,49 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
             />
           </button>
 
-          <Link
-            href="/#download"
-            style={{
-              fontSize: 14,
-              fontWeight: 600,
-              color: 'var(--am-onlove)',
-              background: 'var(--am-love)',
-              borderRadius: 999,
-              padding: '10px 18px',
-              textDecoration: 'none',
-            }}
-          >
+          <Link href="/#download" className="site-nav__cta" style={ctaStyle}>
             {vi ? 'Tải app' : 'Get the app'}
           </Link>
+
+          <button
+            type="button"
+            className="site-nav__menu-toggle site-nav__round-button"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-label={vi ? 'Menu' : 'Menu'}
+            aria-expanded={menuOpen}
+            aria-controls="site-nav-panel"
+            style={roundButtonStyle}
+          >
+            <MaterialIcon
+              name={menuOpen ? 'close' : 'menu'}
+              size={20}
+              opsz={20}
+              color="var(--am-ink2)"
+            />
+          </button>
         </div>
+
+        {menuOpen && (
+          <nav
+            id="site-nav-panel"
+            className="site-nav__panel"
+            style={{
+              width: '100%',
+              flexDirection: 'column',
+              gap: 2,
+              paddingBottom: 6,
+            }}
+          >
+            {navLinks}
+            <Link
+              href="/#download"
+              onClick={closeMenu}
+              style={{ ...ctaStyle, textAlign: 'center', marginTop: 8 }}
+            >
+              {vi ? 'Tải app' : 'Get the app'}
+            </Link>
+          </nav>
+        )}
       </div>
     </div>
   );

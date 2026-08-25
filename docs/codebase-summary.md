@@ -83,12 +83,12 @@ bản thiết kế: khối Premium (`#FFEDF1`…) và màn hình điện thoại
 ## Kiểm thử
 
 Playwright E2E, chạy trên bản production (`npm test` tự đóng gói rồi khởi động server
-ở cổng cố định 3210). 53 test / 3 file:
+ở cổng cố định 3210). 60 test / 3 file:
 
 | File | Bao phủ |
 | --- | --- |
 | `e2e/routes.spec.ts` | 10 route trả 200 + đúng `<title>`/`<h1>`, icon PNG, điều hướng nội bộ, không có lỗi JS |
-| `e2e/layout.spec.ts` | Không cuộn ngang ở 1440/768/390 cho cả 10 route, khung điện thoại co vừa mobile, nav dính khi cuộn |
+| `e2e/layout.spec.ts` | Không cuộn ngang ở 1440/768/390 cho cả 10 route, khung điện thoại co vừa mobile, nav dính khi cuộn, thanh điều hướng thu gọn ở 720/390/320 |
 | `e2e/preferences.spec.ts` | Toggle VI/EN (đổi + lưu + giữ khi chuyển trang), toggle Paper/Dusk (đổi + lưu + không nháy sáng), blog ẩn nút ngôn ngữ, accordion FAQ |
 
 Lưu ý về phép đo cuộn ngang trong `layout.spec.ts`: phải dùng
@@ -112,3 +112,9 @@ vẫn báo bề rộng phần tử bị cắt.
    nhưng chỉ nạp 400–700; ở đây nạp thêm 300 để hiển thị đúng ý đồ.
 5. **`support.js`** (runtime `x-dc`, `sc-if`, `sc-for`, `dc-import`, `DCLogic`) không
    được port — React thay thế trực tiếp các primitive này.
+6. **Thanh điều hướng thu gọn dưới 720px**: bản thiết kế để `flex-wrap` tự xuống hàng,
+   trên điện thoại thành 3 hàng cao 150px và dính ở đầu màn hình. Nay dưới 720px các
+   liên kết và nút tải app gom vào panel mở bằng nút menu, thanh còn một hàng ~60px.
+   Dưới 560px ẩn nhãn "a couple app"; dưới 400px thu lề và kích thước nút. Các giá trị
+   cần media query ghi đè (lề, cỡ chữ logo, nút tròn, viên VI/EN) đặt trong
+   `globals.css` thay vì inline style, vì inline luôn thắng media query.
