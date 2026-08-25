@@ -70,7 +70,7 @@ const CONTACTS = [
 export function TeamPage() {
   const { lang } = useLang();
   const vi = lang !== 'en';
-  const { members, values } = teamContent(lang);
+  const { story, members, values } = teamContent(lang);
 
   return (
     <div style={{ minHeight: '100vh' }}>
@@ -112,6 +112,146 @@ export function TeamPage() {
               ? '1010 Creative là một studio độc lập tại Việt Nam. Chúng mình tin rằng một ứng dụng cho cặp đôi phải dịu dàng như chính điều nó gìn giữ — nên mỗi màn hình, mỗi dòng chữ và mỗi quyết định về dữ liệu đều được cân nhắc chậm rãi.'
               : '1010 Creative is an independent studio in Vietnam. We believe an app for couples should be as gentle as the thing it keeps — so every screen, every sentence and every data decision is made slowly, on purpose.'}
           </p>
+        </div>
+      </section>
+
+      <section style={{ maxWidth: 1120, margin: '0 auto', padding: '72px 24px 0' }}>
+        <div
+          style={{
+            display: 'flex',
+            gap: 36,
+            flexWrap: 'wrap',
+            alignItems: 'flex-start',
+          }}
+        >
+          <div
+            style={{
+              flex: '1 1 420px',
+              minWidth: 280,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 14,
+            }}
+          >
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: 600,
+                letterSpacing: '0.16em',
+                color: 'var(--am-labelstrong)',
+              }}
+            >
+              {story.label}
+            </span>
+            <h2
+              style={{
+                margin: 0,
+                fontSize: 'clamp(26px, 3.2vw, 38px)',
+                lineHeight: 1.2,
+                fontWeight: 700,
+                letterSpacing: '-0.015em',
+                textWrap: 'pretty',
+              }}
+            >
+              {story.title}
+            </h2>
+            {story.paragraphs.map((paragraph) => (
+              <p
+                key={paragraph}
+                style={{
+                  margin: 0,
+                  fontFamily: 'var(--font-lora), Georgia, serif',
+                  fontSize: 16.5,
+                  lineHeight: '29px',
+                  color: 'var(--am-ink2)',
+                  textWrap: 'pretty',
+                }}
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          <figure
+            style={{
+              flex: '0 1 320px',
+              minWidth: 260,
+              margin: 0,
+              background: 'var(--am-peachpaper)',
+              borderRadius: 22,
+              padding: 28,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 14,
+              transform: 'rotate(-2.2deg)',
+              boxShadow: cardShadow,
+            }}
+          >
+            <MaterialIcon
+              name="format_quote"
+              size={26}
+              color="var(--am-labelstrong)"
+            />
+            <blockquote
+              style={{
+                margin: 0,
+                fontFamily: 'var(--font-lora), Georgia, serif',
+                fontSize: 18,
+                lineHeight: '30px',
+                fontStyle: 'italic',
+                color: 'var(--am-ink)',
+                textWrap: 'pretty',
+              }}
+            >
+              {story.quote}
+            </blockquote>
+            <figcaption style={{ fontSize: 12.5, color: 'var(--am-ink3)' }}>
+              {story.quoteBy}
+            </figcaption>
+          </figure>
+        </div>
+
+        <div
+          style={{
+            marginTop: 36,
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
+            gap: 16,
+          }}
+        >
+          {story.beats.map((beat) => (
+            <div
+              key={beat.title}
+              style={{
+                background: 'var(--am-card)',
+                borderRadius: 20,
+                padding: 22,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 8,
+                boxShadow: cardShadow,
+              }}
+            >
+              <MaterialIcon
+                name={beat.icon}
+                size={24}
+                color="var(--am-labelstrong)"
+              />
+              <h3 style={{ margin: 0, fontSize: 16, fontWeight: 600 }}>
+                {beat.title}
+              </h3>
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: 14,
+                  lineHeight: '22px',
+                  color: 'var(--am-ink2)',
+                }}
+              >
+                {beat.body}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -211,18 +351,6 @@ export function TeamPage() {
             </div>
           ))}
         </div>
-        <p
-          style={{
-            margin: '20px 4px 0',
-            fontSize: 13,
-            lineHeight: '20px',
-            color: 'var(--am-ink3)',
-          }}
-        >
-          {vi
-            ? 'Studio vận hành tinh gọn — mỗi thành viên đội nhiều chiếc mũ, và mọi chiếc mũ đều hướng về cùng một sản phẩm.'
-            : 'We run lean — every member wears several hats, and every hat points at the same product.'}
-        </p>
       </section>
 
       <section style={{ maxWidth: 1120, margin: '0 auto', padding: '80px 24px 0' }}>
