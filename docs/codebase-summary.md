@@ -22,7 +22,17 @@ npm start       # chạy bản đã đóng gói
 npm run lint    # eslint
 npm test        # Playwright E2E (tự đóng gói + chạy server ở cổng 3210)
 npm run test:ui # Playwright ở chế độ UI
+npm run test:prod  # E2E trỏ vào site production đã deploy
 ```
+
+Trỏ E2E vào một địa chỉ bất kỳ bằng `E2E_BASE_URL`:
+
+```bash
+E2E_BASE_URL=production npx playwright test          # dùng SITE.url
+E2E_BASE_URL=https://<preview>.vercel.app npx playwright test
+```
+
+Khi biến này có giá trị, config bỏ qua bước dựng server cục bộ.
 
 ## Cấu trúc
 
@@ -91,6 +101,16 @@ Playwright E2E, chạy trên bản production (`npm test` tự đóng gói rồi
 | `e2e/routes.spec.ts` | 10 route trả 200 + đúng `<title>`/`<h1>`, icon tab, icon PNG, điều hướng nội bộ, không có lỗi JS |
 | `e2e/layout.spec.ts` | Không cuộn ngang ở 1440/768/390 cho cả 10 route, khung điện thoại co vừa mobile, nav dính khi cuộn, thanh điều hướng thu gọn ở 720/390/320 |
 | `e2e/preferences.spec.ts` | Toggle VI/EN (đổi + lưu + giữ khi chuyển trang), toggle Paper/Dusk (đổi + lưu + không nháy sáng), blog ẩn nút ngôn ngữ, accordion FAQ |
+
+CI: `.github/workflows/ci.yml` chạy lint → typecheck → E2E trên mỗi push vào `main` và
+mỗi pull request. Chạy tay qua `workflow_dispatch` với input `base_url` (`production`
+hoặc một URL) để test thẳng site đã deploy. Test hỏng thì báo cáo HTML được lưu làm
+artifact 7 ngày. Lưu ý Vercel không chạy test khi deploy — CI là chỗ duy nhất chặn.
+
+Không dùng `waitForLoadState('networkidle')`: khi test chạy song song vào site ở xa,
+điều kiện "500ms không request nào" trượt liên tục và đã làm ba test đo tràn ngang hỏng
+ngẫu nhiên. Thay bằng `waitForFonts()` (`document.fonts.ready`) — đúng thứ phép đo cần
+và tất định.
 
 Lưu ý về phép đo cuộn ngang trong `layout.spec.ts`: phải dùng
 `window.scrollTo({ behavior: 'instant' })`. Vì `html` đặt `scroll-behavior: smooth`,

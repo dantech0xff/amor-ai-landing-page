@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { ROUTES } from './routes';
+import { waitForFonts } from './wait-for-fonts';
 
 test.describe('Mọi route đều phục vụ được', () => {
   for (const route of ROUTES) {
@@ -62,7 +63,7 @@ test('không có lỗi JavaScript khi tải trang chủ', async ({ page }) => {
   page.on('pageerror', (error) => errors.push(error.message));
 
   await page.goto('/');
-  await page.waitForLoadState('networkidle');
+  await waitForFonts(page);
 
   expect(errors).toEqual([]);
 });

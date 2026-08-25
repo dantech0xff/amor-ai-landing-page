@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Be_Vietnam_Pro, Lora } from 'next/font/google';
 import { PreferenceSync } from '@/components/preference-sync';
+import { SITE } from '@/lib/site';
 import './globals.css';
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -20,7 +21,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://amorai.dantech.academy'),
+  metadataBase: new URL(SITE.url),
   title: 'Amor AI — a couple app · Giữ lại nhịp yêu thương mỗi ngày',
   description:
     'Amor AI là ứng dụng dành cho cặp đôi: đếm ngày bên nhau, viết ký ức, câu hỏi mỗi ngày và widget ấm áp — riêng tư, không quảng cáo.',

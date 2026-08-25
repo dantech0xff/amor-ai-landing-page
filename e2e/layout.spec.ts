@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { ROUTES, VIEWPORTS } from './routes';
+import { waitForFonts } from './wait-for-fonts';
 
 /**
  * Đo bằng cách thử cuộn ngang rồi đọc lại scrollX. Không dùng scrollWidth vì
@@ -26,7 +27,7 @@ for (const viewport of VIEWPORTS) {
     for (const route of ROUTES) {
       test(`${route.path} không cuộn ngang được`, async ({ page }) => {
         await page.goto(route.path);
-        await page.waitForLoadState('networkidle');
+        await waitForFonts(page);
 
         expect(await canScrollHorizontally(page)).toBe(false);
       });
