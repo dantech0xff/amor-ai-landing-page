@@ -1,28 +1,55 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { JsonLd } from './json-ld';
 import { SiteFooter } from './site-footer';
 import { SiteNav } from './site-nav';
-import type { BlogPost } from '@/lib/content/blog';
+import {
+  displayDate,
+  postHeadline,
+  postPath,
+  type BlogPost,
+} from '@/lib/content/blog';
+import {
+  blogPostingLd,
+  breadcrumbLd,
+  graph,
+  organizationLd,
+} from '@/lib/seo';
 
 export type NextRead = { slug: string; label: string };
 
 /** Khung chung cho một bài viết blog (chỉ có bản tiếng Việt). */
 export function BlogArticle({
   post,
-  title,
   lead,
   children,
   nextReads,
 }: {
   post: BlogPost;
-  /** Tiêu đề đầy đủ hiển thị trong bài, có thể dài hơn tiêu đề ở thẻ. */
-  title: string;
   lead: ReactNode;
   children: ReactNode;
   nextReads: NextRead[];
 }) {
+  const headline = postHeadline(post);
+
   return (
     <div style={{ minHeight: '100vh' }}>
+      <JsonLd
+        data={graph(
+          organizationLd(),
+          blogPostingLd({
+            path: postPath(post),
+            headline,
+            description: post.metaDescription,
+            datePublished: post.isoDate,
+          }),
+          breadcrumbLd([
+            { name: 'Trang chủ', path: '/' },
+            { name: 'Blog', path: '/blog' },
+            { name: headline, path: postPath(post) },
+          ]),
+        )}
+      />
       <SiteNav lang="vi" showLang={false} />
 
       <article
@@ -58,7 +85,7 @@ export function BlogArticle({
               {post.category}
             </span>
             <span style={{ fontSize: 12.5, color: 'var(--am-ink3)' }}>
-              Amor Studio · {post.date} · {post.readTime}
+              Amor Studio · {displayDate(post.isoDate)} · {post.readTime}
             </span>
           </div>
           <h1
@@ -71,7 +98,7 @@ export function BlogArticle({
               textWrap: 'pretty',
             }}
           >
-            {title}
+            {headline}
           </h1>
           <p
             style={{

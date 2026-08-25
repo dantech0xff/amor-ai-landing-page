@@ -3,8 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { AppStoreBadge, GooglePlayBadge } from './store-badges';
-import { useLang } from '@/lib/preferences';
-import { SITE, type Lang } from '@/lib/site';
+import { SITE, localePath, type Lang } from '@/lib/site';
 
 const columnLabel = {
   fontSize: 11,
@@ -27,9 +26,10 @@ const column = {
   gap: 10,
 } as const;
 
-export function SiteFooter({ lang: forcedLang }: { lang?: Lang }) {
-  const { lang: contextLang } = useLang();
-  const vi = (forcedLang ?? contextLang) !== 'en';
+export function SiteFooter({ lang }: { lang: Lang }) {
+  const vi = lang !== 'en';
+  const home = localePath('/', lang);
+  const at = (path: string) => localePath(path, lang);
 
   return (
     <footer style={{ marginTop: 96 }}>
@@ -76,35 +76,41 @@ export function SiteFooter({ lang: forcedLang }: { lang?: Lang }) {
 
           <div style={column}>
             <span style={columnLabel}>{vi ? 'KHÁM PHÁ' : 'EXPLORE'}</span>
-            <Link href="/" style={columnLink}>
+            <Link href={home} style={columnLink}>
               {vi ? 'Trang chủ' : 'Home'}
             </Link>
-            <Link href="/#features" style={columnLink}>
+            <Link href={`${home}#features`} style={columnLink}>
               {vi ? 'Tính năng' : 'Features'}
             </Link>
-            <Link href="/#premium" style={columnLink}>
+            <Link href={`${home}#premium`} style={columnLink}>
               Premium
             </Link>
             <Link href="/blog" style={columnLink}>
               Blog
             </Link>
-            <Link href="/team" style={columnLink}>
+            {/* Trang so sánh chỉ có bản tiếng Việt. */}
+            {vi && (
+              <Link href="/so-sanh" style={columnLink}>
+                So sánh app cặp đôi
+              </Link>
+            )}
+            <Link href={at('/team')} style={columnLink}>
               Team
             </Link>
           </div>
 
           <div style={column}>
             <span style={columnLabel}>{vi ? 'HỖ TRỢ' : 'SUPPORT'}</span>
-            <Link href="/faq" style={columnLink}>
+            <Link href={at('/faq')} style={columnLink}>
               FAQ
             </Link>
-            <Link href="/team#contact" style={columnLink}>
+            <Link href={`${at('/team')}#contact`} style={columnLink}>
               {vi ? 'Liên hệ' : 'Contact'}
             </Link>
-            <Link href="/terms" style={columnLink}>
+            <Link href={at('/terms')} style={columnLink}>
               {vi ? 'Điều khoản' : 'Terms of Service'}
             </Link>
-            <Link href="/privacy" style={columnLink}>
+            <Link href={at('/privacy')} style={columnLink}>
               {vi ? 'Quyền riêng tư' : 'Privacy Policy'}
             </Link>
             <a href={`mailto:${SITE.email}`} style={columnLink}>

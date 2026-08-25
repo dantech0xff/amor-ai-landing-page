@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Fragment, type ReactNode } from 'react';
 import { SiteFooter } from './site-footer';
 import { SiteNav } from './site-nav';
-import { useLang } from '@/lib/preferences';
+import { localePath, type Lang } from '@/lib/site';
 
 export type LegalSection = { heading: string; paragraphs: ReactNode[] };
 
@@ -30,13 +30,15 @@ const paragraphStyle = { margin: 0 } as const;
 export function LegalPage({
   document: doc,
   seeAlso,
+  lang,
 }: {
   document: LegalDocument;
   seeAlso: ReactNode;
+  lang: Lang;
 }) {
   return (
     <div style={{ minHeight: '100vh' }}>
-      <SiteNav />
+      <SiteNav lang={lang} />
 
       <section style={{ maxWidth: 760, margin: '0 auto', padding: '64px 24px 0' }}>
         <div
@@ -132,7 +134,7 @@ export function LegalPage({
         </div>
       </section>
 
-      <SiteFooter />
+      <SiteFooter lang={lang} />
     </div>
   );
 }
@@ -140,35 +142,38 @@ export function LegalPage({
 /** Liên kết "Xem thêm" ở cuối hai trang pháp lý. */
 export function LegalSeeAlso({
   target,
+  lang,
 }: {
   target: 'privacy' | 'terms';
+  lang: Lang;
 }) {
-  const { lang } = useLang();
   const vi = lang !== 'en';
+  const faq = localePath('/faq', lang);
+  const other = localePath(`/${target}`, lang);
 
   if (target === 'privacy') {
     return vi ? (
       <>
-        Xem thêm: <Link href="/privacy">Chính sách quyền riêng tư</Link> ·{' '}
-        <Link href="/faq">FAQ</Link>
+        Xem thêm: <Link href={other}>Chính sách quyền riêng tư</Link> ·{' '}
+        <Link href={faq}>FAQ</Link>
       </>
     ) : (
       <>
-        See also: <Link href="/privacy">Privacy Policy</Link> ·{' '}
-        <Link href="/faq">FAQ</Link>
+        See also: <Link href={other}>Privacy Policy</Link> ·{' '}
+        <Link href={faq}>FAQ</Link>
       </>
     );
   }
 
   return vi ? (
     <>
-      Xem thêm: <Link href="/terms">Điều khoản dịch vụ</Link> ·{' '}
-      <Link href="/faq">FAQ</Link>
+      Xem thêm: <Link href={other}>Điều khoản dịch vụ</Link> ·{' '}
+      <Link href={faq}>FAQ</Link>
     </>
   ) : (
     <>
-      See also: <Link href="/terms">Terms of Service</Link> ·{' '}
-      <Link href="/faq">FAQ</Link>
+      See also: <Link href={other}>Terms of Service</Link> ·{' '}
+      <Link href={faq}>FAQ</Link>
     </>
   );
 }

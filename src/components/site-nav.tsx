@@ -2,14 +2,16 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { MaterialIcon } from './material-icon';
-import { useLang, useTheme } from '@/lib/preferences';
-import { SITE, type Lang } from '@/lib/site';
+import { useTheme } from '@/lib/preferences';
+import { SITE, basePath, localePath, type Lang } from '@/lib/site';
 
 type SiteNavProps = {
-  /** Ép ngôn ngữ cho các trang chỉ có một thứ tiếng (blog). */
-  lang?: Lang;
+  /** Ngôn ngữ của route đang mở. */
+  lang: Lang;
+  /** Trang chỉ có một thứ tiếng (blog, so sánh) ẩn nút đổi ngôn ngữ. */
   showLang?: boolean;
 };
 
@@ -42,8 +44,7 @@ const roundButtonStyle = {
 
 function langPillStyle(active: boolean) {
   return {
-    border: 'none',
-    cursor: 'pointer',
+    display: 'block',
     fontFamily: 'inherit',
     fontSize: 12,
     fontWeight: active ? 700 : 600,
@@ -51,13 +52,19 @@ function langPillStyle(active: boolean) {
     background: active ? 'var(--am-card)' : 'transparent',
     borderRadius: 999,
     boxShadow: active ? '0 1px 4px var(--am-shadow1)' : undefined,
+    textDecoration: 'none',
   } as const;
 }
 
-export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
-  const { lang: contextLang, setLang } = useLang();
-  const lang = forcedLang ?? contextLang;
+export function SiteNav({ lang, showLang = true }: SiteNavProps) {
   const vi = lang !== 'en';
+
+  // Ngôn ngữ nằm trong URL nên nút VI/EN là liên kết tới chính trang đang xem
+  // ở ngôn ngữ kia — Google mới thấy được hai bản là hai trang riêng.
+  const pathname = usePathname();
+  const viHref = basePath(pathname);
+  const enHref = localePath(viHref, 'en');
+  const home = localePath('/', lang);
 
   const { theme, setTheme } = useTheme();
   const toggleTheme = () => setTheme(theme === 'dusk' ? 'paper' : 'dusk');
@@ -68,10 +75,14 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
 
   const navLinks = (
     <>
-      <Link href="/#features" style={linkStyle} onClick={closeMenu}>
+      <Link href={`${home}#features`} style={linkStyle} onClick={closeMenu}>
         {vi ? 'Tính năng' : 'Features'}
       </Link>
-      <Link href="/team" style={linkStyle} onClick={closeMenu}>
+      <Link
+        href={localePath('/team', lang)}
+        style={linkStyle}
+        onClick={closeMenu}
+      >
         Team
       </Link>
       <Link href="/blog" style={linkStyle} onClick={closeMenu}>
@@ -102,7 +113,7 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
         }}
       >
         <Link
-          href="/"
+          href={home}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -171,22 +182,24 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
                 padding: 3,
               }}
             >
-              <button
-                type="button"
+              <Link
+                href={viHref}
+                hrefLang="vi"
+                aria-current={vi ? 'true' : undefined}
                 className="site-nav__lang-pill"
-                onClick={() => setLang('vi')}
                 style={langPillStyle(vi)}
               >
                 VI
-              </button>
-              <button
-                type="button"
+              </Link>
+              <Link
+                href={enHref}
+                hrefLang="en"
+                aria-current={vi ? undefined : 'true'}
                 className="site-nav__lang-pill"
-                onClick={() => setLang('en')}
                 style={langPillStyle(!vi)}
               >
                 EN
-              </button>
+              </Link>
             </div>
           )}
 
@@ -206,7 +219,11 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
             />
           </button>
 
-          <Link href="/#download" className="site-nav__cta" style={ctaStyle}>
+          <Link
+            href={`${home}#download`}
+            className="site-nav__cta"
+            style={ctaStyle}
+          >
             {vi ? 'Tải app' : 'Get the app'}
           </Link>
 
@@ -241,7 +258,7 @@ export function SiteNav({ lang: forcedLang, showLang = true }: SiteNavProps) {
           >
             {navLinks}
             <Link
-              href="/#download"
+              href={`${home}#download`}
               onClick={closeMenu}
               style={{ ...ctaStyle, textAlign: 'center', marginTop: 8 }}
             >
