@@ -24,6 +24,9 @@
 # production
 /build
 
+# ghi chép làm việc, giữ ở máy chứ không đẩy lên repo
+/plans/
+
 # misc
 .DS_Store
 *.pem
