@@ -159,11 +159,9 @@ const STORY_VI: Story = {
   label: 'VÌ SAO CÓ AMOR AI',
   title: 'Ứng dụng này bắt đầu từ một khoảng cách',
   paragraphs: [
-    'Mình là lập trình viên. Cả ngày mình viết những dòng lệnh rất rõ ràng: cái gì chạy, cái gì hỏng, cái gì cần sửa. Rồi tối đến, mình mở khung chat với người yêu và ngồi im — không biết nên bắt đầu bằng chữ gì.',
-    'Tụi mình yêu xa. Không có bữa tối chung, không có đường về chung, chỉ có một màn hình sáng lên vào cuối ngày. Khi khoảng cách là thứ duy nhất đều đặn, thì mấy dòng tin nhắn thành ra là gần như tất cả những gì mình có để giữ nhau.',
-    'Mình luôn muốn viết cho cô ấy điều gì đó thật ngọt ngào — không phải câu "ngủ ngon" lặp lại đến ngày thứ ba trăm, mà một câu khiến cô ấy mỉm cười trước khi tắt đèn. Có hôm mình gõ rồi xoá bốn năm lần. Không phải vì thương ít, mà vì thương thì nhiều mà chữ thì hết.',
-    'Nên mình làm cái mà một lập trình viên biết làm: viết một ứng dụng. Đầu tiên chỉ là con số đếm ngày bên nhau đặt ngay màn hình chính, để ngày nào cũng có cớ nhắn một câu. Rồi thêm chỗ ghi lại những mẩu chuyện nhỏ, để sau này còn có cái mà đọc lại. Rồi thêm AI đứng cạnh gợi ý một cách nói khi mình bí chữ — nó không viết thay mình, nó chỉ đẩy mình qua khoảng lặng đầu tiên.',
-    'Amor AI ra đời như vậy. Người dùng đầu tiên là chính mình, và bản kiểm thử đầu tiên là một tin nhắn gửi lúc mười một giờ đêm cho người ở cách vài trăm cây số. Giờ nó ở đây cho những cặp đôi khác — nhất là những cặp đang đếm ngược tới ngày được gặp nhau.',
+    'Mình là lập trình viên, và tụi mình yêu xa. Cả ngày mình viết code rất rõ ràng; tối đến mở khung chat với người yêu thì ngồi im, không biết nên bắt đầu bằng chữ gì.',
+    'Mình luôn muốn viết cho cô ấy điều gì đó ngọt ngào hơn câu "ngủ ngon" lặp lại đến ngày thứ ba trăm. Có hôm gõ rồi xoá bốn năm lần — không phải vì thương ít, mà vì thương thì nhiều mà chữ thì hết.',
+    'Nên mình làm cái mà một lập trình viên biết làm: viết một ứng dụng. Đếm ngày bên nhau để hôm nào cũng có cớ nhắn một câu, chỗ giữ lại những mẩu chuyện nhỏ, và một AI đứng cạnh gợi ý khi bí chữ — nó không viết thay, chỉ đẩy mình qua khoảng lặng đầu tiên. Người dùng đầu tiên của Amor AI là chính mình.',
   ],
   quote:
     'Một ngày mình viết được cả nghìn dòng code, mà có hôm không viết nổi một dòng để nói rằng mình nhớ em.',
@@ -191,11 +189,9 @@ const STORY_EN: Story = {
   label: 'WHY AMOR AI EXISTS',
   title: 'This app started with a distance',
   paragraphs: [
-    'I am a developer. All day I write lines that are perfectly clear: what runs, what breaks, what needs fixing. Then evening comes, I open the chat with my girlfriend — and I sit there, not knowing which word to start with.',
-    'We were long distance. No shared dinners, no shared way home, just a screen lighting up at the end of the day. When the distance is the only constant, a few lines of text become almost everything you have to hold on to each other with.',
-    'I always wanted to write her something sweet — not the same "good night" for the three hundredth time, but one line that would make her smile before she turned off the lamp. Some nights I typed and deleted it four or five times. Not because I loved her less, but because the love was plenty and the words had run out.',
-    'So I did what a developer knows how to do: I built an app. First it was only the number of days together, sitting on the home screen, so there was a reason to send something every day. Then a place to keep the small stories, so there would be something to read back later. Then an AI standing beside me, offering a way to say it when I got stuck — it does not write for me, it just carries me past the first silence.',
-    'That is how Amor AI was born. Its first user was me, and its first test was a message sent at eleven at night to someone a few hundred kilometres away. Now it is here for other couples — especially the ones counting down to the day they finally meet.',
+    'I am a developer, and we were long distance. All day I write lines that are perfectly clear; then evening comes, I open the chat with my girlfriend and just sit there, not knowing which word to start with.',
+    'I always wanted to write her something sweeter than the same "good night" for the three hundredth time. Some nights I typed and deleted it four or five times — not because I loved her less, but because the love was plenty and the words had run out.',
+    'So I did what a developer knows how to do: I built an app. A day count so there is always a reason to send something, a place to keep the small stories, and an AI beside me offering a way to say it when I get stuck — it does not write for me, it just carries me past the first silence. Amor AI\'s first user was me.',
   ],
   quote:
     'I can write a thousand lines of code in a day, and still some nights I cannot write one line to say I miss you.',
