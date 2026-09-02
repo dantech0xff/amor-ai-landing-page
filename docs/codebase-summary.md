@@ -1,6 +1,6 @@
-# Amor AI Landing Page — Codebase Summary
+# Duoly Landing Page — Codebase Summary
 
-Website giới thiệu ứng dụng **Amor AI — a couple app**, port từ project Claude Design
+Website giới thiệu ứng dụng **Duoly in Love — Relationship App**, port từ project Claude Design
 `2accb440-b7c5-4c98-9a25-17d57ba17cf3` sang Next.js.
 
 ## Tech stack
@@ -77,7 +77,7 @@ playwright.config.ts        # cổng cố định 3210, chạy trên bản produ
 - `:root` — theme **Paper** (mặc định).
 - `:root[data-theme='dusk']` — theme **Dusk**.
 
-Component dùng `var(--am-*)`, không hardcode màu, trừ hai chỗ cố ý giữ nguyên như
+Component dùng `var(--du-*)`, không hardcode màu, trừ hai chỗ cố ý giữ nguyên như
 bản thiết kế: khối Premium (`#FFEDF1`…) và màn hình điện thoại trong hero
 (luôn hiển thị theme Paper vì đó là ảnh chụp giao diện app).
 
@@ -97,7 +97,7 @@ tắc tiền tố này.
 - Trang blog và `/so-sanh` chỉ có tiếng Việt: truyền `lang="vi" showLang={false}` cho
   `SiteNav` và đặt `bilingual: false` trong `pageMetadata` để không khai hreflang trỏ
   tới URL không tồn tại.
-- Theme vẫn lưu trong `localStorage` (`amor-theme`: `paper` | `dusk`), đọc bằng
+- Theme vẫn lưu trong `localStorage` (`duoly-theme`: `paper` | `dusk`), đọc bằng
   `useSyncExternalStore` → server luôn render mặc định, không lệch hydrate. Script
   inline trong `<head>` gắn `data-theme="dusk"` trước khi vẽ để không nháy sáng.
 

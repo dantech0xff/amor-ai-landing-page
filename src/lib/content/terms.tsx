@@ -11,7 +11,7 @@ const VI: LegalDocument = {
     {
       heading: '1. Chấp nhận điều khoản',
       paragraphs: [
-        'Bằng việc tải, cài đặt hoặc sử dụng ứng dụng "Amor AI - a couple app" ("Ứng dụng"), bạn đồng ý với các điều khoản này. Nếu không đồng ý, vui lòng không sử dụng Ứng dụng.',
+        'Bằng việc tải, cài đặt hoặc sử dụng ứng dụng "Duoly - a couple app" ("Ứng dụng"), bạn đồng ý với các điều khoản này. Nếu không đồng ý, vui lòng không sử dụng Ứng dụng.',
       ],
     },
     {
@@ -35,7 +35,7 @@ const VI: LegalDocument = {
     {
       heading: '5. Premium và thanh toán',
       paragraphs: [
-        'Amor Premium gồm gói Hàng tháng, Hàng năm (đăng ký tự gia hạn) và Trọn đời (mua một lần). Giá hiển thị trong Ứng dụng và được thanh toán qua Google Play. Gói đăng ký tự gia hạn cho đến khi bạn hủy trong phần quản lý đăng ký của Google Play; hủy có hiệu lực vào cuối chu kỳ đã thanh toán. Bạn có thể khôi phục giao dịch bằng chức năng "Khôi phục giao dịch" trong Ứng dụng.',
+        'Duoly Premium gồm gói Hàng tháng, Hàng năm (đăng ký tự gia hạn) và Trọn đời (mua một lần). Giá hiển thị trong Ứng dụng và được thanh toán qua Google Play. Gói đăng ký tự gia hạn cho đến khi bạn hủy trong phần quản lý đăng ký của Google Play; hủy có hiệu lực vào cuối chu kỳ đã thanh toán. Bạn có thể khôi phục giao dịch bằng chức năng "Khôi phục giao dịch" trong Ứng dụng.',
         <>
           Lưu ý về Trọn đời: mua Trọn đời trong khi một gói đăng ký đang chạy sẽ
           thay thế quyền lợi của gói đó, nhưng gói đăng ký cũ{' '}
@@ -54,7 +54,7 @@ const VI: LegalDocument = {
     {
       heading: '7. Sở hữu trí tuệ',
       paragraphs: [
-        'Ứng dụng, thương hiệu "Amor AI - a couple app", giao diện và tài sản thiết kế thuộc về nhà phát triển. Điều này không ảnh hưởng đến quyền sở hữu nội dung của bạn nêu tại mục 4.',
+        'Ứng dụng, thương hiệu "Duoly - a couple app", giao diện và tài sản thiết kế thuộc về nhà phát triển. Điều này không ảnh hưởng đến quyền sở hữu nội dung của bạn nêu tại mục 4.',
       ],
     },
     {
@@ -101,7 +101,7 @@ const EN: LegalDocument = {
     {
       heading: '1. Acceptance',
       paragraphs: [
-        'By downloading, installing or using "Amor AI - a couple app" (the "App"), you agree to these terms. If you do not agree, please do not use the App.',
+        'By downloading, installing or using "Duoly - a couple app" (the "App"), you agree to these terms. If you do not agree, please do not use the App.',
       ],
     },
     {
@@ -125,7 +125,7 @@ const EN: LegalDocument = {
     {
       heading: '5. Premium and billing',
       paragraphs: [
-        'Amor Premium offers Monthly and Yearly auto-renewing subscriptions and a one-time Lifetime purchase. Prices are shown in-app and billed through Google Play. Subscriptions renew until cancelled in Google Play’s subscription settings; cancellation takes effect at the end of the paid period. Purchases can be restored with "Restore purchases" in the App.',
+        'Duoly Premium offers Monthly and Yearly auto-renewing subscriptions and a one-time Lifetime purchase. Prices are shown in-app and billed through Google Play. Subscriptions renew until cancelled in Google Play’s subscription settings; cancellation takes effect at the end of the paid period. Purchases can be restored with "Restore purchases" in the App.',
         <>
           Lifetime note: buying Lifetime while a subscription is running
           supersedes its benefits, but the old subscription{' '}
@@ -144,7 +144,7 @@ const EN: LegalDocument = {
     {
       heading: '7. Intellectual property',
       paragraphs: [
-        'The App, the "Amor AI - a couple app" brand, its interface and design assets belong to the developer. This does not affect your ownership of your content under section 4.',
+        'The App, the "Duoly - a couple app" brand, its interface and design assets belong to the developer. This does not affect your ownership of your content under section 4.',
       ],
     },
     {

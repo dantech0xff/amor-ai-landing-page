@@ -11,12 +11,12 @@ import {
 } from '@/lib/seo';
 
 const DESCRIPTION =
-  'Amor AI là app đếm ngày yêu và nhật ký cho cặp đôi: đếm ngày bên nhau, viết lại ký ức, một câu hỏi mỗi ngày và widget ấm áp ngay trên màn hình chính. Riêng tư, không quảng cáo, miễn phí để bắt đầu.';
+  'Duoly là app đếm ngày yêu và nhật ký cho cặp đôi: đếm ngày bên nhau, viết lại ký ức, một câu hỏi mỗi ngày và widget ấm áp ngay trên màn hình chính. Riêng tư, không quảng cáo, miễn phí để bắt đầu.';
 
 export const metadata: Metadata = pageMetadata({
   lang: 'vi',
   path: '/',
-  title: 'Amor AI — App đếm ngày yêu & nhật ký cặp đôi',
+  title: 'Duoly — App đếm ngày yêu & nhật ký cặp đôi',
   description: DESCRIPTION,
   keywords: KEYWORDS.homeVi,
 });

@@ -85,7 +85,7 @@ const html = `<!doctype html>
     <div class="glow glow-butter"></div>
     <div class="brand">
       <img src="${iconDataUri}" alt="" />
-      <span class="brand-name">Amor AI</span>
+      <span class="brand-name">Duoly</span>
       <span class="badge">a couple app</span>
     </div>
     <div class="rule"></div>

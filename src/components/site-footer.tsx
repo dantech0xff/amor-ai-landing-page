@@ -9,16 +9,16 @@ const columnLabel = {
   fontSize: 11,
   fontWeight: 600,
   letterSpacing: '0.14em',
-  color: 'var(--am-ink3)',
+  color: 'var(--du-ink3)',
 } as const;
 
 const columnLink = {
   fontSize: 14,
-  color: 'var(--am-ink2)',
+  color: 'var(--du-ink2)',
   textDecoration: 'none',
 } as const;
 
-const divider = { height: 1, background: 'var(--am-divider)' } as const;
+const divider = { height: 1, background: 'var(--du-divider)' } as const;
 
 const column = {
   display: 'flex',
@@ -48,15 +48,15 @@ export function SiteFooter({ lang }: { lang: Lang }) {
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
               <Image
                 src={SITE.icon}
-                alt="Amor AI"
+                alt="Duoly"
                 width={30}
                 height={30}
                 style={{ borderRadius: 9, display: 'block' }}
               />
               <span
-                style={{ fontSize: 16, fontWeight: 700, color: 'var(--am-ink)' }}
+                style={{ fontSize: 16, fontWeight: 700, color: 'var(--du-ink)' }}
               >
-                Amor AI — a couple app
+                Duoly — a couple app
               </span>
             </div>
             <p
@@ -64,7 +64,7 @@ export function SiteFooter({ lang }: { lang: Lang }) {
                 margin: 0,
                 fontSize: 13.5,
                 lineHeight: '21px',
-                color: 'var(--am-ink2)',
+                color: 'var(--du-ink2)',
                 maxWidth: 280,
               }}
             >
@@ -142,10 +142,10 @@ export function SiteFooter({ lang }: { lang: Lang }) {
             padding: '20px 0 28px',
           }}
         >
-          <span style={{ fontSize: 12.5, color: 'var(--am-ink3)' }}>
+          <span style={{ fontSize: 12.5, color: 'var(--du-ink3)' }}>
             © 2026 TRAN HUU DANH. All rights reserved.
           </span>
-          <span style={{ fontSize: 12.5, color: 'var(--am-ink3)' }}>
+          <span style={{ fontSize: 12.5, color: 'var(--du-ink3)' }}>
             {vi
               ? 'Làm bằng sự nâng niu, tại Việt Nam.'
               : 'Made with care, in Vietnam.'}

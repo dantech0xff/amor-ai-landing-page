@@ -84,8 +84,8 @@ export function BlogArticle({
             >
               {post.category}
             </span>
-            <span style={{ fontSize: 12.5, color: 'var(--am-ink3)' }}>
-              Amor Studio · {displayDate(post.isoDate)} · {post.readTime}
+            <span style={{ fontSize: 12.5, color: 'var(--du-ink3)' }}>
+              Duoly Studio · {displayDate(post.isoDate)} · {post.readTime}
             </span>
           </div>
           <h1
@@ -106,7 +106,7 @@ export function BlogArticle({
               fontFamily: 'var(--font-lora), Georgia, serif',
               fontSize: 18,
               lineHeight: '30px',
-              color: 'var(--am-ink2)',
+              color: 'var(--du-ink2)',
             }}
           >
             {lead}
@@ -128,7 +128,7 @@ export function BlogArticle({
               fontSize: 11,
               fontWeight: 600,
               letterSpacing: '0.14em',
-              color: 'var(--am-ink3)',
+              color: 'var(--du-ink3)',
             }}
           >
             ĐỌC TIẾP

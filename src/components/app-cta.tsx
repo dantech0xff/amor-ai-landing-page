@@ -21,7 +21,7 @@ export function AppCta({
   return (
     <div
       style={{
-        background: 'var(--am-lovec)',
+        background: 'var(--du-lovec)',
         borderRadius: radius,
         padding,
         display: 'flex',
@@ -32,7 +32,7 @@ export function AppCta({
     >
       <Image
         src={SITE.icon}
-        alt="Amor AI"
+        alt="Duoly"
         width={iconSize}
         height={iconSize}
         style={{
@@ -54,7 +54,7 @@ export function AppCta({
           style={{
             fontSize: iconSize >= 52 ? 17 : 16,
             fontWeight: 700,
-            color: 'var(--am-onlovec)',
+            color: 'var(--du-onlovec)',
           }}
         >
           {title}
@@ -63,7 +63,7 @@ export function AppCta({
           style={{
             fontSize: 14,
             lineHeight: '22px',
-            color: 'var(--am-onlovec)',
+            color: 'var(--du-onlovec)',
             opacity: 0.85,
           }}
         >

@@ -21,7 +21,7 @@ test('icon app được phục vụ dưới dạng PNG', async ({ request }) => 
   expect(response.headers()['content-type']).toContain('image/png');
 });
 
-test('icon tab là icon Amor AI, không phải favicon mặc định của Next', async ({
+test('icon tab là icon Duoly, không phải favicon mặc định của Next', async ({
   page,
   request,
 }) => {

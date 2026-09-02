@@ -29,7 +29,7 @@ export function FaqPage({ lang }: { lang: Lang }) {
               fontSize: 11,
               fontWeight: 600,
               letterSpacing: '0.16em',
-              color: 'var(--am-labelstrong)',
+              color: 'var(--du-labelstrong)',
             }}
           >
             {vi ? 'HỖ TRỢ' : 'SUPPORT'}
@@ -50,7 +50,7 @@ export function FaqPage({ lang }: { lang: Lang }) {
               margin: 0,
               fontSize: 16,
               lineHeight: '26px',
-              color: 'var(--am-ink2)',
+              color: 'var(--du-ink2)',
             }}
           >
             {vi ? (
@@ -76,9 +76,9 @@ export function FaqPage({ lang }: { lang: Lang }) {
             <details
               key={item.q}
               style={{
-                background: 'var(--am-card)',
+                background: 'var(--du-card)',
                 borderRadius: 20,
-                boxShadow: '0 2px 8px var(--am-shadow1)',
+                boxShadow: '0 2px 8px var(--du-shadow1)',
                 overflow: 'hidden',
               }}
             >
@@ -90,7 +90,7 @@ export function FaqPage({ lang }: { lang: Lang }) {
                   padding: '20px 22px',
                   fontSize: 15.5,
                   fontWeight: 600,
-                  color: 'var(--am-ink)',
+                  color: 'var(--du-ink)',
                 }}
               >
                 <MaterialIcon
@@ -98,7 +98,7 @@ export function FaqPage({ lang }: { lang: Lang }) {
                   name="chevron_right"
                   size={20}
                   opsz={20}
-                  color="var(--am-love)"
+                  color="var(--du-love)"
                   style={{ transition: 'transform 0.18s ease' }}
                 />
                 <span style={{ flex: 1 }}>{item.q}</span>
@@ -108,7 +108,7 @@ export function FaqPage({ lang }: { lang: Lang }) {
                   padding: '0 22px 20px 56px',
                   fontSize: 14.5,
                   lineHeight: '23px',
-                  color: 'var(--am-ink2)',
+                  color: 'var(--du-ink2)',
                 }}
               >
                 {item.a}

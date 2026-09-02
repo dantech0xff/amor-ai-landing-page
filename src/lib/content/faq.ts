@@ -4,7 +4,7 @@ export type FaqItem = { q: string; a: string };
 
 const FAQ_VI: FaqItem[] = [
   {
-    q: 'Amor AI có miễn phí không?',
+    q: 'Duoly có miễn phí không?',
     a: 'Có. Bản Free luôn giữ trọn giá trị cốt lõi: đếm ngày, viết ghi chú, tâm trạng mỗi ngày, widget và 3 phông chữ. Ký ức bạn tạo ra không bao giờ bị khóa sau paywall.',
   },
   {
@@ -13,7 +13,7 @@ const FAQ_VI: FaqItem[] = [
   },
   {
     q: 'Hai đứa có cần cùng cài app không?',
-    a: 'Không bắt buộc. Amor AI hoạt động trọn vẹn kể cả khi chỉ một người dùng — và app không bao giờ giả vờ người kia đang online hay "đã đọc".',
+    a: 'Không bắt buộc. Duoly hoạt động trọn vẹn kể cả khi chỉ một người dùng — và app không bao giờ giả vờ người kia đang online hay "đã đọc".',
   },
   {
     q: 'Ghi chú của tụi mình có riêng tư không?',
@@ -37,7 +37,7 @@ const FAQ_VI: FaqItem[] = [
   },
   {
     q: 'App có bản iOS chưa?',
-    a: 'Amor AI đang phát hành trên Google Play. Phiên bản iOS đang được chuẩn bị — nút App Store trên trang chủ sẽ hoạt động ngay khi bản iOS lên kệ.',
+    a: 'Duoly đang phát hành trên Google Play. Phiên bản iOS đang được chuẩn bị — nút App Store trên trang chủ sẽ hoạt động ngay khi bản iOS lên kệ.',
   },
   {
     q: 'Làm sao xóa dữ liệu hoặc tài khoản?',
@@ -51,7 +51,7 @@ const FAQ_VI: FaqItem[] = [
 
 const FAQ_EN: FaqItem[] = [
   {
-    q: 'Is Amor AI free?',
+    q: 'Is Duoly free?',
     a: 'Yes. Free always keeps the core: day counting, notes, daily moods, widgets and 3 fonts. Memories you create are never locked behind a paywall.',
   },
   {
@@ -60,7 +60,7 @@ const FAQ_EN: FaqItem[] = [
   },
   {
     q: 'Do both of us need the app?',
-    a: 'No. Amor AI works fully even when only one of you uses it — and the app never pretends your partner is online or has "seen" anything.',
+    a: 'No. Duoly works fully even when only one of you uses it — and the app never pretends your partner is online or has "seen" anything.',
   },
   {
     q: 'Are our notes private?',
@@ -84,7 +84,7 @@ const FAQ_EN: FaqItem[] = [
   },
   {
     q: 'Is there an iOS version?',
-    a: 'Amor AI is live on Google Play. The iOS version is in the works — the App Store button on the home page will light up the moment it ships.',
+    a: 'Duoly is live on Google Play. The iOS version is in the works — the App Store button on the home page will light up the moment it ships.',
   },
   {
     q: 'How do I delete my data or account?',

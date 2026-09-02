@@ -7,9 +7,9 @@ import { breadcrumbLd, faqPageLd, graph, pageMetadata } from '@/lib/seo';
 export const metadata: Metadata = pageMetadata({
   lang: 'en',
   path: '/faq',
-  title: 'Frequently Asked Questions — Amor AI',
+  title: 'Frequently Asked Questions — Duoly',
   description:
-    'Frequently asked questions about Amor AI — a couple app: free and Premium, privacy, the widget, restoring purchases, deleting your data and more.',
+    'Frequently asked questions about Duoly — a couple app: free and Premium, privacy, the widget, restoring purchases, deleting your data and more.',
 });
 
 export default function Page() {

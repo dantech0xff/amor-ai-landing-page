@@ -5,9 +5,9 @@ import { pageMetadata } from '@/lib/seo';
 export const metadata: Metadata = pageMetadata({
   lang: 'en',
   path: '/privacy',
-  title: 'Privacy Policy — Amor AI',
+  title: 'Privacy Policy — Duoly',
   description:
-    'The Amor AI privacy policy: what data is collected, how it is used, and what the app will never do with your notes.',
+    'The Duoly privacy policy: what data is collected, how it is used, and what the app will never do with your notes.',
 });
 
 export default function Page() {

@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { ROUTES } from './routes';
 
-const SITE_URL = 'https://amorai.dantech.academy';
+const SITE_URL = 'https://duoly.dantech.academy';
 
 /** URL tuyệt đối tương ứng một đường dẫn, khớp cách Next dựng canonical. */
 const absolute = (path: string) =>

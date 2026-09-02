@@ -5,9 +5,9 @@ import { pageMetadata } from '@/lib/seo';
 export const metadata: Metadata = pageMetadata({
   lang: 'vi',
   path: '/privacy',
-  title: 'Chính sách quyền riêng tư — Amor AI',
+  title: 'Chính sách quyền riêng tư — Duoly',
   description:
-    'Chính sách quyền riêng tư của Amor AI: dữ liệu thu thập, cách sử dụng, và những điều app không bao giờ làm với ghi chú của bạn.',
+    'Chính sách quyền riêng tư của Duoly: dữ liệu thu thập, cách sử dụng, và những điều app không bao giờ làm với ghi chú của bạn.',
 });
 
 export default function Page() {

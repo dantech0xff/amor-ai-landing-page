@@ -22,9 +22,9 @@ import {
 export const metadata: Metadata = pageMetadata({
   lang: 'vi',
   path: '/so-sanh',
-  title: 'So sánh app đếm ngày yêu: Amor AI, Been Together, Love Days',
+  title: 'So sánh app đếm ngày yêu: Duoly, Been Together, Love Days',
   description:
-    'So sánh Amor AI với các app đếm ngày yêu quen thuộc như Been Together, Been Love Memory và Love Days: đếm ngày, widget, nhật ký chung, quảng cáo và quyền riêng tư — chọn đúng app cho hai bạn.',
+    'So sánh Duoly với các app đếm ngày yêu quen thuộc như Been Together, Been Love Memory và Love Days: đếm ngày, widget, nhật ký chung, quảng cáo và quyền riêng tư — chọn đúng app cho hai bạn.',
   keywords: KEYWORDS.compare,
   bilingual: false,
 });
@@ -36,9 +36,9 @@ const VERDICT_LABEL: Record<Verdict, string> = {
 };
 
 const VERDICT_STYLE: Record<Verdict, { bg: string; fg: string }> = {
-  yes: { bg: 'var(--am-lovec)', fg: 'var(--am-ink)' },
-  no: { bg: 'var(--am-inset)', fg: 'var(--am-ink3)' },
-  varies: { bg: 'var(--am-quietc)', fg: 'var(--am-onquietc)' },
+  yes: { bg: 'var(--du-lovec)', fg: 'var(--du-ink)' },
+  no: { bg: 'var(--du-inset)', fg: 'var(--du-ink3)' },
+  varies: { bg: 'var(--du-quietc)', fg: 'var(--du-onquietc)' },
 };
 
 function VerdictChip({ verdict }: { verdict: Verdict }) {
@@ -63,7 +63,7 @@ function VerdictChip({ verdict }: { verdict: Verdict }) {
 
 const cellStyle = {
   padding: '14px 12px',
-  borderBottom: '1px solid var(--am-divider)',
+  borderBottom: '1px solid var(--du-divider)',
   verticalAlign: 'top',
 } as const;
 
@@ -73,8 +73,8 @@ const headCellStyle = {
   fontSize: 12,
   fontWeight: 600,
   letterSpacing: '0.08em',
-  color: 'var(--am-ink3)',
-  borderBottom: '1px solid var(--am-divider)',
+  color: 'var(--du-ink3)',
+  borderBottom: '1px solid var(--du-divider)',
   whiteSpace: 'nowrap',
 } as const;
 
@@ -107,7 +107,7 @@ export default function Page() {
               fontSize: 11,
               fontWeight: 600,
               letterSpacing: '0.16em',
-              color: 'var(--am-labelstrong)',
+              color: 'var(--du-labelstrong)',
             }}
           >
             SO SÁNH
@@ -122,7 +122,7 @@ export default function Page() {
               textWrap: 'pretty',
             }}
           >
-            So sánh app đếm ngày yêu: Amor AI và những cái tên quen thuộc
+            So sánh app đếm ngày yêu: Duoly và những cái tên quen thuộc
           </h1>
           <p
             style={{
@@ -130,12 +130,12 @@ export default function Page() {
               fontFamily: 'var(--font-lora), Georgia, serif',
               fontSize: 18,
               lineHeight: '30px',
-              color: 'var(--am-ink2)',
+              color: 'var(--du-ink2)',
             }}
           >
             Nếu bạn đang tìm {CLASSIC_APPS.join(', ')} hay một app đếm ngày yêu
             nào đó, trang này giúp bạn thấy rõ mình thật sự cần gì. Chúng tôi chỉ
-            khẳng định chắc chắn về Amor AI; với các app khác, những gì thay đổi
+            khẳng định chắc chắn về Duoly; với các app khác, những gì thay đổi
             theo từng bản cập nhật đều được ghi là “tuỳ app” thay vì đoán bừa.
           </p>
         </header>
@@ -148,7 +148,7 @@ export default function Page() {
             hiểu, cài xong là xong.
           </p>
           <p>
-            Amor AI đứng ở chỗ khác. Con số đếm ngày vẫn là thứ bạn mở app để
+            Duoly đứng ở chỗ khác. Con số đếm ngày vẫn là thứ bạn mở app để
             nhìn, nhưng nó là cửa vào một cuốn sổ chung: ghi chú kèm ảnh, tâm
             trạng mỗi ngày, một câu hỏi gợi ý mỗi ngày để hai bạn cùng trả lời.
             Nặng hơn về nội dung, và vì thế chỉ đáng cài nếu bạn thật sự muốn
@@ -170,7 +170,7 @@ export default function Page() {
             <thead>
               <tr>
                 <th style={headCellStyle}>TÍNH NĂNG</th>
-                <th style={headCellStyle}>AMOR AI</th>
+                <th style={headCellStyle}>DUOLY</th>
                 <th style={headCellStyle}>APP ĐẾM NGÀY KINH ĐIỂN</th>
               </tr>
             </thead>
@@ -179,7 +179,7 @@ export default function Page() {
                 <tr key={row.feature}>
                   <td style={cellStyle}>
                     <strong
-                      style={{ fontWeight: 600, color: 'var(--am-ink)' }}
+                      style={{ fontWeight: 600, color: 'var(--du-ink)' }}
                     >
                       {row.feature}
                     </strong>
@@ -189,14 +189,14 @@ export default function Page() {
                         marginTop: 4,
                         fontSize: 13,
                         lineHeight: '20px',
-                        color: 'var(--am-ink2)',
+                        color: 'var(--du-ink2)',
                       }}
                     >
                       {row.note}
                     </span>
                   </td>
                   <td style={cellStyle}>
-                    <VerdictChip verdict={row.amor} />
+                    <VerdictChip verdict={row.duoly} />
                   </td>
                   <td style={cellStyle}>
                     <VerdictChip verdict={row.classic} />
@@ -208,7 +208,7 @@ export default function Page() {
         </div>
 
         <div className="article-body">
-          <p style={{ fontSize: 13.5, color: 'var(--am-ink3)' }}>
+          <p style={{ fontSize: 13.5, color: 'var(--du-ink3)' }}>
             Cột bên phải nói về nhóm app đếm ngày nói chung ({CLASSIC_APPS.join(', ')}
             …). Mỗi app một khác và tính năng đổi theo bản cập nhật, nên hãy xem
             trang cửa hàng của từng app trước khi quyết định.
@@ -218,11 +218,11 @@ export default function Page() {
           <ul className="list-roomy">
             <li>
               <strong>Chọn app đếm ngày kinh điển</strong> nếu bạn chỉ cần con số
-              và widget, muốn app thật nhẹ, hoặc đang dùng iPhone — Amor AI hiện
+              và widget, muốn app thật nhẹ, hoặc đang dùng iPhone — Duoly hiện
               mới có trên Google Play.
             </li>
             <li>
-              <strong>Chọn Amor AI</strong> nếu bạn muốn con số ấy đi kèm chỗ để
+              <strong>Chọn Duoly</strong> nếu bạn muốn con số ấy đi kèm chỗ để
               viết lại vì sao ngày đó đáng nhớ, không muốn thấy quảng cáo giữa lúc
               xem lại ảnh cũ, và thích một app không có bảng tin để so kè với cặp
               khác.
@@ -231,7 +231,7 @@ export default function Page() {
 
           <div className="callout">
             <strong>Không phải chọn một lần cho xong.</strong> Ngày bắt đầu là dữ
-            liệu duy nhất bạn cần mang theo. Cài Amor AI, nhập lại đúng ngày đó,
+            liệu duy nhất bạn cần mang theo. Cài Duoly, nhập lại đúng ngày đó,
             con số sẽ khớp ngay với app cũ — dùng song song vài tuần rồi hẵng
             quyết.
           </div>
@@ -239,8 +239,8 @@ export default function Page() {
           <div style={{ margin: '36px 0' }}>
             <AppCta
               title="Đếm ngày bên nhau, và giữ lại lý do"
-              body="Amor AI miễn phí để bắt đầu: đếm ngày, nhật ký chung có ảnh, câu hỏi mỗi ngày và widget ấm áp — không quảng cáo."
-              action="Tải Amor AI"
+              body="Duoly miễn phí để bắt đầu: đếm ngày, nhật ký chung có ảnh, câu hỏi mỗi ngày và widget ấm áp — không quảng cáo."
+              action="Tải Duoly"
             />
           </div>
 
@@ -265,7 +265,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/faq">Câu hỏi thường gặp về Amor AI</Link>
+              <Link href="/faq">Câu hỏi thường gặp về Duoly</Link>
             </li>
           </ul>
         </div>

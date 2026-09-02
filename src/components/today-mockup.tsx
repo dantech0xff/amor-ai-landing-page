@@ -1,7 +1,7 @@
 import { MaterialIcon } from './material-icon';
 
 /*
- * Màn hình "Hôm nay" của Amor AI dùng làm ảnh minh hoạ trong hero.
+ * Màn hình "Hôm nay" của Duoly dùng làm ảnh minh hoạ trong hero.
  * Bảng màu ở đây là Paper cố định (màn hình điện thoại), không đổi theo theme site.
  */
 

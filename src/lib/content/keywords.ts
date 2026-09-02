@@ -7,7 +7,7 @@
  */
 export const KEYWORDS = {
   homeVi: [
-    'amor ai',
+    'duoly',
     'app đếm ngày yêu',
     'đếm ngày yêu',
     'đếm ngày bên nhau',
@@ -17,7 +17,7 @@ export const KEYWORDS = {
     'app kỷ niệm ngày yêu',
   ],
   homeEn: [
-    'amor ai',
+    'duoly',
     'couple app',
     'days together counter',
     'anniversary countdown app',
@@ -33,6 +33,6 @@ export const KEYWORDS = {
     'app đếm ngày yêu',
     'so sánh app cặp đôi',
     'app đếm ngày yêu nào tốt',
-    'amor ai',
+    'duoly',
   ],
 } as const;

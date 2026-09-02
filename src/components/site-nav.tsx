@@ -18,15 +18,15 @@ type SiteNavProps = {
 const linkStyle = {
   fontSize: 14,
   fontWeight: 500,
-  color: 'var(--am-ink2)',
+  color: 'var(--du-ink2)',
   textDecoration: 'none',
 } as const;
 
 const ctaStyle = {
   fontSize: 14,
   fontWeight: 600,
-  color: 'var(--am-onlove)',
-  background: 'var(--am-love)',
+  color: 'var(--du-onlove)',
+  background: 'var(--du-love)',
   borderRadius: 999,
   padding: '10px 18px',
   textDecoration: 'none',
@@ -36,7 +36,7 @@ const roundButtonStyle = {
   border: 'none',
   cursor: 'pointer',
   borderRadius: 999,
-  background: 'var(--am-inset)',
+  background: 'var(--du-inset)',
   alignItems: 'center',
   justifyContent: 'center',
   flexShrink: 0,
@@ -48,10 +48,10 @@ function langPillStyle(active: boolean) {
     fontFamily: 'inherit',
     fontSize: 12,
     fontWeight: active ? 700 : 600,
-    color: active ? 'var(--am-ink)' : 'var(--am-ink3)',
-    background: active ? 'var(--am-card)' : 'transparent',
+    color: active ? 'var(--du-ink)' : 'var(--du-ink3)',
+    background: active ? 'var(--du-card)' : 'transparent',
     borderRadius: 999,
-    boxShadow: active ? '0 1px 4px var(--am-shadow1)' : undefined,
+    boxShadow: active ? '0 1px 4px var(--du-shadow1)' : undefined,
     textDecoration: 'none',
   } as const;
 }
@@ -97,7 +97,7 @@ export function SiteNav({ lang, showLang = true }: SiteNavProps) {
         position: 'sticky',
         top: 0,
         zIndex: 60,
-        background: 'var(--am-navglass)',
+        background: 'var(--du-navglass)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
       }}
@@ -124,7 +124,7 @@ export function SiteNav({ lang, showLang = true }: SiteNavProps) {
         >
           <Image
             src={SITE.icon}
-            alt="Amor AI"
+            alt="Duoly"
             width={34}
             height={34}
             style={{ borderRadius: 10, display: 'block' }}
@@ -134,11 +134,11 @@ export function SiteNav({ lang, showLang = true }: SiteNavProps) {
             className="site-nav__wordmark"
             style={{
               fontWeight: 700,
-              color: 'var(--am-ink)',
+              color: 'var(--du-ink)',
               letterSpacing: '-0.01em',
             }}
           >
-            Amor AI
+            Duoly
           </span>
           <span
             className="site-nav__badge"
@@ -146,9 +146,9 @@ export function SiteNav({ lang, showLang = true }: SiteNavProps) {
               fontSize: 10,
               fontWeight: 600,
               letterSpacing: '0.12em',
-              color: 'var(--am-ink3)',
+              color: 'var(--du-ink3)',
               textTransform: 'uppercase',
-              background: 'var(--am-inset)',
+              background: 'var(--du-inset)',
               borderRadius: 999,
               padding: '4px 9px',
               whiteSpace: 'nowrap',
@@ -177,7 +177,7 @@ export function SiteNav({ lang, showLang = true }: SiteNavProps) {
             <div
               style={{
                 display: 'flex',
-                background: 'var(--am-inset)',
+                background: 'var(--du-inset)',
                 borderRadius: 999,
                 padding: 3,
               }}
@@ -215,7 +215,7 @@ export function SiteNav({ lang, showLang = true }: SiteNavProps) {
               size={19}
               opsz={20}
               fill={theme === 'dusk' ? 1 : 0}
-              color="var(--am-ink2)"
+              color="var(--du-ink2)"
             />
           </button>
 
@@ -240,7 +240,7 @@ export function SiteNav({ lang, showLang = true }: SiteNavProps) {
               name={menuOpen ? 'close' : 'menu'}
               size={20}
               opsz={20}
-              color="var(--am-ink2)"
+              color="var(--du-ink2)"
             />
           </button>
         </div>

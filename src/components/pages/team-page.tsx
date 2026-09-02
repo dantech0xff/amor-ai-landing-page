@@ -9,10 +9,10 @@ import { teamContent } from '@/lib/content/team';
 import { SITE, localePath, type Lang } from '@/lib/site';
 
 const cardShadow =
-  '0 2px 8px var(--am-shadow1), 0 10px 28px var(--am-shadow2)';
+  '0 2px 8px var(--du-shadow1), 0 10px 28px var(--du-shadow2)';
 
 const contactCard: CSSProperties = {
-  background: 'var(--am-card)',
+  background: 'var(--du-card)',
   borderRadius: 24,
   padding: 28,
   display: 'flex',
@@ -24,8 +24,8 @@ const contactCard: CSSProperties = {
 const CONTACTS = [
   {
     icon: 'mail',
-    iconBg: 'var(--am-lovec)',
-    iconFg: 'var(--am-love)',
+    iconBg: 'var(--du-lovec)',
+    iconFg: 'var(--du-love)',
     subject: 'Support',
     vi: {
       title: 'Hỗ trợ chung',
@@ -38,8 +38,8 @@ const CONTACTS = [
   },
   {
     icon: 'credit_card',
-    iconBg: 'var(--am-butter)',
-    iconFg: 'var(--am-premium)',
+    iconBg: 'var(--du-butter)',
+    iconFg: 'var(--du-premium)',
     subject: 'Billing',
     vi: {
       title: 'Thanh toán & Premium',
@@ -52,16 +52,16 @@ const CONTACTS = [
   },
   {
     icon: 'lightbulb',
-    iconBg: 'var(--am-quietc)',
-    iconFg: 'var(--am-onquietc)',
+    iconBg: 'var(--du-quietc)',
+    iconFg: 'var(--du-onquietc)',
     subject: 'Idea',
     vi: {
       title: 'Góp ý tính năng',
-      body: 'Amor AI lớn lên từ góp ý của các cặp đôi đang dùng nó. Kể tụi mình nghe điều bạn mong có.',
+      body: 'Duoly lớn lên từ góp ý của các cặp đôi đang dùng nó. Kể tụi mình nghe điều bạn mong có.',
     },
     en: {
       title: 'Feature ideas',
-      body: 'Amor AI grows from the couples using it. Tell us what you wish it had.',
+      body: 'Duoly grows from the couples using it. Tell us what you wish it had.',
     },
   },
 ] as const;
@@ -102,7 +102,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
               margin: 0,
               fontSize: 17,
               lineHeight: '28px',
-              color: 'var(--am-ink2)',
+              color: 'var(--du-ink2)',
               textWrap: 'pretty',
             }}
           >
@@ -136,7 +136,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
                 fontSize: 11,
                 fontWeight: 600,
                 letterSpacing: '0.16em',
-                color: 'var(--am-labelstrong)',
+                color: 'var(--du-labelstrong)',
               }}
             >
               {story.label}
@@ -161,7 +161,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
                   fontFamily: 'var(--font-lora), Georgia, serif',
                   fontSize: 16.5,
                   lineHeight: '29px',
-                  color: 'var(--am-ink2)',
+                  color: 'var(--du-ink2)',
                   textWrap: 'pretty',
                 }}
               >
@@ -175,7 +175,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
               flex: '0 1 320px',
               minWidth: 260,
               margin: 0,
-              background: 'var(--am-peachpaper)',
+              background: 'var(--du-peachpaper)',
               borderRadius: 22,
               padding: 28,
               display: 'flex',
@@ -188,7 +188,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
             <MaterialIcon
               name="format_quote"
               size={26}
-              color="var(--am-labelstrong)"
+              color="var(--du-labelstrong)"
             />
             <blockquote
               style={{
@@ -197,13 +197,13 @@ export function TeamPage({ lang }: { lang: Lang }) {
                 fontSize: 18,
                 lineHeight: '30px',
                 fontStyle: 'italic',
-                color: 'var(--am-ink)',
+                color: 'var(--du-ink)',
                 textWrap: 'pretty',
               }}
             >
               {story.quote}
             </blockquote>
-            <figcaption style={{ fontSize: 12.5, color: 'var(--am-ink3)' }}>
+            <figcaption style={{ fontSize: 12.5, color: 'var(--du-ink3)' }}>
               {story.quoteBy}
             </figcaption>
           </figure>
@@ -221,7 +221,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
             <div
               key={beat.title}
               style={{
-                background: 'var(--am-card)',
+                background: 'var(--du-card)',
                 borderRadius: 20,
                 padding: 22,
                 display: 'flex',
@@ -233,7 +233,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
               <MaterialIcon
                 name={beat.icon}
                 size={24}
-                color="var(--am-labelstrong)"
+                color="var(--du-labelstrong)"
               />
               <h3 style={{ margin: 0, fontSize: 16, fontWeight: 600 }}>
                 {beat.title}
@@ -243,7 +243,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
                   margin: 0,
                   fontSize: 14,
                   lineHeight: '22px',
-                  color: 'var(--am-ink2)',
+                  color: 'var(--du-ink2)',
                 }}
               >
                 {beat.body}
@@ -265,7 +265,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
             <div
               key={member.role}
               style={{
-                background: 'var(--am-card)',
+                background: 'var(--du-card)',
                 borderRadius: 24,
                 padding: 28,
                 display: 'flex',
@@ -306,7 +306,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
                     fontSize: 11.5,
                     fontWeight: 600,
                     letterSpacing: '0.12em',
-                    color: 'var(--am-labelstrong)',
+                    color: 'var(--du-labelstrong)',
                   }}
                 >
                   {member.role}
@@ -317,7 +317,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
                   margin: 0,
                   fontSize: 14,
                   lineHeight: '22px',
-                  color: 'var(--am-ink2)',
+                  color: 'var(--du-ink2)',
                 }}
               >
                 {member.bio}
@@ -336,8 +336,8 @@ export function TeamPage({ lang }: { lang: Lang }) {
                     style={{
                       fontSize: 11.5,
                       fontWeight: 500,
-                      color: 'var(--am-ink2)',
-                      background: 'var(--am-inset)',
+                      color: 'var(--du-ink2)',
+                      background: 'var(--du-inset)',
                       borderRadius: 999,
                       padding: '4px 10px',
                     }}
@@ -354,7 +354,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
       <section style={{ maxWidth: 1120, margin: '0 auto', padding: '80px 24px 0' }}>
         <div
           style={{
-            background: 'var(--am-butter)',
+            background: 'var(--du-butter)',
             borderRadius: 28,
             padding: 'clamp(32px, 4.5vw, 52px)',
             display: 'grid',
@@ -370,7 +370,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
               <MaterialIcon
                 name={value.icon}
                 size={26}
-                color="var(--am-labelstrong)"
+                color="var(--du-labelstrong)"
               />
               <h3 style={{ margin: 0, fontSize: 17, fontWeight: 600 }}>
                 {value.title}
@@ -380,7 +380,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
                   margin: 0,
                   fontSize: 14,
                   lineHeight: '22px',
-                  color: 'var(--am-ink2)',
+                  color: 'var(--du-ink2)',
                 }}
               >
                 {value.body}
@@ -408,7 +408,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
               fontSize: 11,
               fontWeight: 600,
               letterSpacing: '0.16em',
-              color: 'var(--am-labelstrong)',
+              color: 'var(--du-labelstrong)',
             }}
           >
             {vi ? 'LIÊN HỆ' : 'CONTACT'}
@@ -431,7 +431,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
               margin: 0,
               fontSize: 16,
               lineHeight: '26px',
-              color: 'var(--am-ink2)',
+              color: 'var(--du-ink2)',
             }}
           >
             {vi
@@ -476,14 +476,14 @@ export function TeamPage({ lang }: { lang: Lang }) {
                     margin: 0,
                     fontSize: 14,
                     lineHeight: '22px',
-                    color: 'var(--am-ink2)',
+                    color: 'var(--du-ink2)',
                   }}
                 >
                   {copy.body}
                 </p>
                 <a
                   href={`mailto:${SITE.email}?subject=${encodeURIComponent(
-                    `[Amor AI] ${contact.subject}`,
+                    `[Duoly] ${contact.subject}`,
                   )}`}
                   style={{
                     marginTop: 'auto',
@@ -502,7 +502,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
         <div
           style={{
             marginTop: 24,
-            background: 'var(--am-inset)',
+            background: 'var(--du-inset)',
             borderRadius: 20,
             padding: '20px 24px',
             display: 'flex',
@@ -511,7 +511,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
             flexWrap: 'wrap',
           }}
         >
-          <MaterialIcon name="help" size={22} color="var(--am-labelstrong)" />
+          <MaterialIcon name="help" size={22} color="var(--du-labelstrong)" />
           <p
             style={{
               margin: 0,
@@ -519,7 +519,7 @@ export function TeamPage({ lang }: { lang: Lang }) {
               minWidth: 240,
               fontSize: 14,
               lineHeight: '22px',
-              color: 'var(--am-ink2)',
+              color: 'var(--du-ink2)',
             }}
           >
             {vi ? (

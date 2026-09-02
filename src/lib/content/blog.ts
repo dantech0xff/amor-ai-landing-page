@@ -25,12 +25,12 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'cau-hoi-cap-doi',
     category: 'HIỂU NHAU HƠN',
-    chipBg: 'var(--am-warmc)',
-    chipFg: 'var(--am-onwarmc)',
+    chipBg: 'var(--du-warmc)',
+    chipFg: 'var(--du-onwarmc)',
     title: '36 câu hỏi để hiểu nhau sâu hơn — và cách dùng chúng',
     headline: '36 câu hỏi để hiểu nhau sâu hơn — và cách dùng chúng cho đúng',
     metaTitle:
-      '36 câu hỏi để hiểu nhau sâu hơn — và cách dùng chúng | Amor AI Blog',
+      '36 câu hỏi để hiểu nhau sâu hơn — và cách dùng chúng | Duoly Blog',
     metaDescription:
       'Trọn bộ 36 câu hỏi cho cặp đôi từ nghiên cứu của Arthur Aron, chia ba mức độ tăng dần — kèm cách biến chúng thành nghi thức tối thứ Sáu thay vì một buổi phỏng vấn gượng gạo.',
     excerpt:
@@ -43,10 +43,10 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'y-tuong-ky-niem-ngay-yeu',
     category: 'KỶ NIỆM',
-    chipBg: 'var(--am-lovec)',
-    chipFg: 'var(--am-ink)',
+    chipBg: 'var(--du-lovec)',
+    chipFg: 'var(--du-ink)',
     title: '24 ý tưởng kỷ niệm ngày yêu nhau ấm áp, dễ làm',
-    metaTitle: '24 ý tưởng kỷ niệm ngày yêu nhau ấm áp, dễ làm | Amor AI Blog',
+    metaTitle: '24 ý tưởng kỷ niệm ngày yêu nhau ấm áp, dễ làm | Duoly Blog',
     metaDescription:
       '24 ý tưởng kỷ niệm ngày yêu nhau từ 0đ đến "chịu chi", ở nhà hay yêu xa — chọn một cách ăn mừng cho ngày thứ 100, 365 hay 1000 của hai bạn.',
     excerpt:
@@ -59,11 +59,11 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'viet-nhat-ky-cap-doi',
     category: 'THÓI QUEN',
-    chipBg: 'var(--am-quietc)',
-    chipFg: 'var(--am-onquietc)',
+    chipBg: 'var(--du-quietc)',
+    chipFg: 'var(--du-onquietc)',
     title: 'Cách viết nhật ký cặp đôi: bắt đầu và giữ được lâu',
     metaTitle:
-      'Cách viết nhật ký cặp đôi: bắt đầu và giữ được lâu | Amor AI Blog',
+      'Cách viết nhật ký cặp đôi: bắt đầu và giữ được lâu | Duoly Blog',
     metaDescription:
       'Cách viết nhật ký cặp đôi mà không bỏ dở: vì sao "mỗi ngày một dòng" thắng "mỗi tuần một trang", 20 gợi ý mở đầu, và cách chọn sổ giấy hay app.',
     excerpt:
@@ -76,10 +76,10 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'yeu-xa',
     category: 'YÊU XA',
-    chipBg: 'var(--am-assist)',
-    chipFg: 'var(--am-onassist)',
+    chipBg: 'var(--du-assist)',
+    chipFg: 'var(--du-onassist)',
     title: 'Yêu xa: 12 thói quen nhỏ giữ hai người ở gần',
-    metaTitle: 'Yêu xa: 12 thói quen nhỏ giữ hai người ở gần | Amor AI Blog',
+    metaTitle: 'Yêu xa: 12 thói quen nhỏ giữ hai người ở gần | Duoly Blog',
     metaDescription:
       '12 thói quen nhỏ cho cặp đôi yêu xa: giờ chào cố định, câu hỏi mỗi ngày, xem phim cùng lúc, đếm ngày gặp lại — giữ nhịp chung khi hai múi giờ không trùng nhau.',
     excerpt:

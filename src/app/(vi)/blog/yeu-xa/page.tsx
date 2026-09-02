@@ -17,7 +17,7 @@ const DAILY: Habit[] = [
   },
   {
     lead: 'Cùng trả lời một câu hỏi mỗi ngày.',
-    body: 'Cùng một câu, hai câu trả lời — thứ để nói chuyện vượt xa "hôm nay ăn gì". Amor AI gợi sẵn một câu mỗi ngày cho việc này.',
+    body: 'Cùng một câu, hai câu trả lời — thứ để nói chuyện vượt xa "hôm nay ăn gì". Duoly gợi sẵn một câu mỗi ngày cho việc này.',
   },
   {
     lead: 'Kể "3 điều hôm nay".',
@@ -125,7 +125,7 @@ export default function Page() {
       <div style={{ margin: '36px 0' }}>
         <AppCta
           title="Một nhịp chung cho hai múi giờ"
-          body="Câu hỏi mỗi ngày, đếm ngày bên nhau và widget nhắc dịu dàng — Amor AI sinh ra cho những cặp đôi giữ nhịp từ xa."
+          body="Câu hỏi mỗi ngày, đếm ngày bên nhau và widget nhắc dịu dàng — Duoly sinh ra cho những cặp đôi giữ nhịp từ xa."
           action="Tải miễn phí"
         />
       </div>

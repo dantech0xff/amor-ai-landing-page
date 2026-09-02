@@ -181,7 +181,7 @@ export default function Page() {
       <div style={{ margin: '36px 0' }}>
         <AppCta
           title="Đừng để lỡ ngày thứ 1000"
-          body="Amor AI đếm ngày bên nhau và nhắc dịu dàng trước mỗi cột mốc — kèm mẫu thiệp để chia sẻ."
+          body="Duoly đếm ngày bên nhau và nhắc dịu dàng trước mỗi cột mốc — kèm mẫu thiệp để chia sẻ."
           action="Tải miễn phí"
         />
       </div>

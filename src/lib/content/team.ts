@@ -26,8 +26,8 @@ export type Story = {
 const MEMBERS_VI: Member[] = [
   {
     initials: 'T',
-    bg: 'var(--am-lovec)',
-    fg: 'var(--am-ink)',
+    bg: 'var(--du-lovec)',
+    fg: 'var(--du-ink)',
     name: 'Trần Hữu Danh',
     role: 'FOUNDER & PRODUCT',
     bio: 'Đặt nền móng và giữ la bàn sản phẩm: một nơi cho hai người, không phải một công cụ theo dõi. Người nói "không" với mọi dark pattern.',
@@ -53,8 +53,8 @@ const MEMBERS_VI: Member[] = [
   },
   {
     initials: '0X',
-    bg: 'var(--am-quietc)',
-    fg: 'var(--am-onquietc)',
+    bg: 'var(--du-quietc)',
+    fg: 'var(--du-onquietc)',
     name: '0XFF',
     role: 'DESIGN LEAD',
     bio: 'Tác giả bảng màu Peach Soda Love và ngôn ngữ thiết kế borderless: không viền kẻ, chỉ có màu, khoảng thở và bóng đổ rất nhẹ.',
@@ -62,8 +62,8 @@ const MEMBERS_VI: Member[] = [
   },
   {
     initials: 'DN',
-    bg: 'var(--am-assist)',
-    fg: 'var(--am-onassist)',
+    bg: 'var(--du-assist)',
+    fg: 'var(--du-onassist)',
     name: 'DANH TRAN',
     role: 'QA & TRUST',
     bio: 'Kiểm thử từng luồng và canh giữ hợp đồng riêng tư: widget chỉ được hỏi một câu, ghi chú chỉ mở khi chính bạn chạm vào.',
@@ -74,8 +74,8 @@ const MEMBERS_VI: Member[] = [
 const MEMBERS_EN: Member[] = [
   {
     initials: 'T',
-    bg: 'var(--am-lovec)',
-    fg: 'var(--am-ink)',
+    bg: 'var(--du-lovec)',
+    fg: 'var(--du-ink)',
     name: 'Trần Hữu Danh',
     role: 'FOUNDER & PRODUCT',
     bio: 'Laid the foundation and keeps the product compass: a place for two, never a surveillance tool. The one who says "no" to every dark pattern.',
@@ -101,8 +101,8 @@ const MEMBERS_EN: Member[] = [
   },
   {
     initials: '0X',
-    bg: 'var(--am-quietc)',
-    fg: 'var(--am-onquietc)',
+    bg: 'var(--du-quietc)',
+    fg: 'var(--du-onquietc)',
     name: '0XFF',
     role: 'DESIGN LEAD',
     bio: 'Author of the Peach Soda Love palette and the borderless design language: no strokes, just color, breathing room and the softest shadows.',
@@ -110,8 +110,8 @@ const MEMBERS_EN: Member[] = [
   },
   {
     initials: 'DN',
-    bg: 'var(--am-assist)',
-    fg: 'var(--am-onassist)',
+    bg: 'var(--du-assist)',
+    fg: 'var(--du-onassist)',
     name: 'DANH TRAN',
     role: 'QA & TRUST',
     bio: 'Tests every flow and guards the privacy contract: a widget may ask exactly one question, and notes open only when you tap them.',
@@ -156,16 +156,16 @@ const VALUES_EN: Value[] = [
 ];
 
 const STORY_VI: Story = {
-  label: 'VÌ SAO CÓ AMOR AI',
+  label: 'VÌ SAO CÓ DUOLY',
   title: 'Ứng dụng này bắt đầu từ một khoảng cách',
   paragraphs: [
     'Mình là lập trình viên, và tụi mình yêu xa. Cả ngày mình viết code rất rõ ràng; tối đến mở khung chat với người yêu thì ngồi im, không biết nên bắt đầu bằng chữ gì.',
     'Mình luôn muốn viết cho cô ấy điều gì đó ngọt ngào hơn câu "ngủ ngon" lặp lại đến ngày thứ ba trăm. Có hôm gõ rồi xoá bốn năm lần — không phải vì thương ít, mà vì thương thì nhiều mà chữ thì hết.',
-    'Nên mình làm cái mà một lập trình viên biết làm: viết một ứng dụng. Đếm ngày bên nhau để hôm nào cũng có cớ nhắn một câu, chỗ giữ lại những mẩu chuyện nhỏ, và một AI đứng cạnh gợi ý khi bí chữ — nó không viết thay, chỉ đẩy mình qua khoảng lặng đầu tiên. Người dùng đầu tiên của Amor AI là chính mình.',
+    'Nên mình làm cái mà một lập trình viên biết làm: viết một ứng dụng. Đếm ngày bên nhau để hôm nào cũng có cớ nhắn một câu, chỗ giữ lại những mẩu chuyện nhỏ, và một AI đứng cạnh gợi ý khi bí chữ — nó không viết thay, chỉ đẩy mình qua khoảng lặng đầu tiên. Người dùng đầu tiên của Duoly là chính mình.',
   ],
   quote:
     'Một ngày mình viết được cả nghìn dòng code, mà có hôm không viết nổi một dòng để nói rằng mình nhớ em.',
-  quoteBy: 'Danh — người viết dòng code đầu tiên của Amor AI',
+  quoteBy: 'Danh — người viết dòng code đầu tiên của Duoly',
   beats: [
     {
       icon: 'code',
@@ -186,16 +186,16 @@ const STORY_VI: Story = {
 };
 
 const STORY_EN: Story = {
-  label: 'WHY AMOR AI EXISTS',
+  label: 'WHY DUOLY EXISTS',
   title: 'This app started with a distance',
   paragraphs: [
     'I am a developer, and we were long distance. All day I write lines that are perfectly clear; then evening comes, I open the chat with my girlfriend and just sit there, not knowing which word to start with.',
     'I always wanted to write her something sweeter than the same "good night" for the three hundredth time. Some nights I typed and deleted it four or five times — not because I loved her less, but because the love was plenty and the words had run out.',
-    'So I did what a developer knows how to do: I built an app. A day count so there is always a reason to send something, a place to keep the small stories, and an AI beside me offering a way to say it when I get stuck — it does not write for me, it just carries me past the first silence. Amor AI\'s first user was me.',
+    'So I did what a developer knows how to do: I built an app. A day count so there is always a reason to send something, a place to keep the small stories, and an AI beside me offering a way to say it when I get stuck — it does not write for me, it just carries me past the first silence. Duoly\'s first user was me.',
   ],
   quote:
     'I can write a thousand lines of code in a day, and still some nights I cannot write one line to say I miss you.',
-  quoteBy: 'Danh — who wrote the first line of Amor AI',
+  quoteBy: 'Danh — who wrote the first line of Duoly',
   beats: [
     {
       icon: 'code',

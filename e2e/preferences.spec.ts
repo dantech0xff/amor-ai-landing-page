@@ -30,7 +30,7 @@ test.describe('Chuyển ngôn ngữ', () => {
     await expect(page).toHaveURL('/en/faq');
     await expect(page.locator('h1')).toHaveText('Frequently asked questions');
     await expect(page.locator('summary').first()).toContainText(
-      'Is Amor AI free?',
+      'Is Duoly free?',
     );
   });
 

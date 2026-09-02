@@ -16,9 +16,9 @@ import { absoluteUrl, breadcrumbLd, graph, pageMetadata } from '@/lib/seo';
 export const metadata: Metadata = pageMetadata({
   lang: 'vi',
   path: '/blog',
-  title: 'Blog Amor AI — chuyện yêu, viết chậm',
+  title: 'Blog Duoly — chuyện yêu, viết chậm',
   description:
-    'Blog của Amor AI: câu hỏi cho cặp đôi, ý tưởng kỷ niệm ngày yêu, cách viết nhật ký cặp đôi, bí quyết yêu xa — những bài viết chậm rãi và thực tế.',
+    'Blog của Duoly: câu hỏi cho cặp đôi, ý tưởng kỷ niệm ngày yêu, cách viết nhật ký cặp đôi, bí quyết yêu xa — những bài viết chậm rãi và thực tế.',
   bilingual: false,
 });
 
@@ -26,7 +26,7 @@ export const metadata: Metadata = pageMetadata({
 const blogLd = {
   '@type': 'Blog',
   '@id': absoluteUrl('/blog'),
-  name: 'Blog Amor AI',
+  name: 'Blog Duoly',
   inLanguage: 'vi',
   blogPost: BLOG_POSTS.map((post) => ({
     '@type': 'BlogPosting',
@@ -38,7 +38,7 @@ const blogLd = {
 };
 
 const cardShadow =
-  '0 2px 8px var(--am-shadow1), 0 10px 28px var(--am-shadow2)';
+  '0 2px 8px var(--du-shadow1), 0 10px 28px var(--du-shadow2)';
 
 export default function Page() {
   const featured = postBySlug('cau-hoi-cap-doi');
@@ -72,7 +72,7 @@ export default function Page() {
               fontSize: 11,
               fontWeight: 600,
               letterSpacing: '0.16em',
-              color: 'var(--am-labelstrong)',
+              color: 'var(--du-labelstrong)',
             }}
           >
             BLOG
@@ -93,7 +93,7 @@ export default function Page() {
               margin: 0,
               fontSize: 16.5,
               lineHeight: '27px',
-              color: 'var(--am-ink2)',
+              color: 'var(--du-ink2)',
             }}
           >
             Những bài viết thực tế về việc yêu nhau mỗi ngày: câu hỏi để hiểu
@@ -106,12 +106,12 @@ export default function Page() {
           href={postPath(featured)}
           style={{
             display: 'block',
-            background: 'var(--am-card)',
+            background: 'var(--du-card)',
             borderRadius: 28,
             padding: 'clamp(28px, 4vw, 44px)',
             textDecoration: 'none',
             boxShadow:
-              '0 2px 10px var(--am-shadow1), 0 12px 32px var(--am-shadow2)',
+              '0 2px 10px var(--du-shadow1), 0 12px 32px var(--du-shadow2)',
             marginBottom: 20,
           }}
         >
@@ -144,7 +144,7 @@ export default function Page() {
               >
                 {featured.category}
               </span>
-              <span style={{ fontSize: 12, color: 'var(--am-ink3)' }}>
+              <span style={{ fontSize: 12, color: 'var(--du-ink3)' }}>
                 Nổi bật · {featured.readTime}
               </span>
             </div>
@@ -155,7 +155,7 @@ export default function Page() {
                 lineHeight: 1.25,
                 fontWeight: 700,
                 letterSpacing: '-0.015em',
-                color: 'var(--am-ink)',
+                color: 'var(--du-ink)',
                 textWrap: 'pretty',
               }}
             >
@@ -166,7 +166,7 @@ export default function Page() {
                 margin: 0,
                 fontSize: 15,
                 lineHeight: '25px',
-                color: 'var(--am-ink2)',
+                color: 'var(--du-ink2)',
               }}
             >
               {featured.excerpt}
@@ -175,7 +175,7 @@ export default function Page() {
               style={{
                 fontSize: 14,
                 fontWeight: 600,
-                color: 'var(--am-link)',
+                color: 'var(--du-link)',
               }}
             >
               Đọc bài viết →
@@ -195,7 +195,7 @@ export default function Page() {
               key={post.slug}
               href={postPath(post)}
               style={{
-                background: 'var(--am-card)',
+                background: 'var(--du-card)',
                 borderRadius: 24,
                 padding: 28,
                 display: 'flex',
@@ -225,7 +225,7 @@ export default function Page() {
                   fontSize: 18.5,
                   lineHeight: '27px',
                   fontWeight: 600,
-                  color: 'var(--am-ink)',
+                  color: 'var(--du-ink)',
                   textWrap: 'pretty',
                 }}
               >
@@ -236,7 +236,7 @@ export default function Page() {
                   margin: 0,
                   fontSize: 14,
                   lineHeight: '22px',
-                  color: 'var(--am-ink2)',
+                  color: 'var(--du-ink2)',
                 }}
               >
                 {post.excerpt}
@@ -245,7 +245,7 @@ export default function Page() {
                 style={{
                   marginTop: 'auto',
                   fontSize: 12,
-                  color: 'var(--am-ink3)',
+                  color: 'var(--du-ink3)',
                 }}
               >
                 {displayDate(post.isoDate)} · {post.readTime}
@@ -257,8 +257,8 @@ export default function Page() {
         <div style={{ marginTop: 48 }}>
           <AppCta
             title="Mỗi ngày một câu hỏi, ngay trong app"
-            body="Amor AI gợi một câu mỗi ngày để hai bạn viết lại — miễn phí bắt đầu."
-            action="Tải Amor AI"
+            body="Duoly gợi một câu mỗi ngày để hai bạn viết lại — miễn phí bắt đầu."
+            action="Tải Duoly"
             iconSize={52}
             padding="clamp(26px, 3.5vw, 40px)"
             radius={24}

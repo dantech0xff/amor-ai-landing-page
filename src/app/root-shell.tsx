@@ -21,7 +21,7 @@ const lora = Lora({
 });
 
 /** Áp theme đã lưu trước khi trang vẽ, tránh nháy sáng khi đang ở Dusk. */
-const THEME_BOOTSTRAP = `(function(){try{if(localStorage.getItem('amor-theme')==='dusk'){document.documentElement.dataset.theme='dusk';}}catch(e){}})();`;
+const THEME_BOOTSTRAP = `(function(){try{if(localStorage.getItem('duoly-theme')==='dusk'){document.documentElement.dataset.theme='dusk';}}catch(e){}})();`;
 
 /**
  * Khung <html> dùng chung cho hai root layout.

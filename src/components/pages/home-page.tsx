@@ -23,11 +23,11 @@ const eyebrow: CSSProperties = {
   fontSize: 11,
   fontWeight: 600,
   letterSpacing: '0.16em',
-  color: 'var(--am-labelstrong)',
+  color: 'var(--du-labelstrong)',
 };
 
 const cardShadow =
-  '0 2px 8px var(--am-shadow1), 0 10px 28px var(--am-shadow2)';
+  '0 2px 8px var(--du-shadow1), 0 10px 28px var(--du-shadow2)';
 
 const autoGrid = (min: number, gap = 16): CSSProperties => ({
   display: 'grid',
@@ -39,8 +39,8 @@ const autoGrid = (min: number, gap = 16): CSSProperties => ({
 const HIGHLIGHTS = [
   {
     icon: 'wb_twilight',
-    bg: 'var(--am-butter)',
-    fg: 'var(--am-labelstrong)',
+    bg: 'var(--du-butter)',
+    fg: 'var(--du-labelstrong)',
     vi: {
       title: 'Nghi thức hôm nay',
       body: 'Một câu hỏi, một dòng viết. Một phút mỗi ngày.',
@@ -52,8 +52,8 @@ const HIGHLIGHTS = [
   },
   {
     icon: 'auto_stories',
-    bg: 'var(--am-peachpaper)',
-    fg: 'var(--am-labelstrong)',
+    bg: 'var(--du-peachpaper)',
+    fg: 'var(--du-labelstrong)',
     vi: {
       title: 'Ký ức có chủ đích',
       body: 'Ghi chú, ảnh, cột mốc — xếp gọn theo thời gian, mở ra khi bạn muốn.',
@@ -65,9 +65,9 @@ const HIGHLIGHTS = [
   },
   {
     icon: 'shield_moon',
-    bg: 'var(--am-quietc)',
-    fg: 'var(--am-onquietc)',
-    ink: 'var(--am-onquietc)',
+    bg: 'var(--du-quietc)',
+    fg: 'var(--du-onquietc)',
+    ink: 'var(--du-onquietc)',
     vi: {
       title: 'Riêng tư được tôn trọng',
       body: 'Dữ liệu của hai bạn ở yên chỗ của nó. Không theo dõi, không chia sẻ.',
@@ -156,13 +156,13 @@ export function HomePage({ lang }: { lang: Lang }) {
               margin: 0,
               fontSize: 17,
               lineHeight: '28px',
-              color: 'var(--am-ink2)',
+              color: 'var(--du-ink2)',
               textWrap: 'pretty',
             }}
           >
             {vi
-              ? 'Amor AI là một cuốn sổ chung nhỏ và ấm: đếm ngày bên nhau, giữ lại những điều nhỏ đáng nhớ, và một câu hỏi mỗi ngày để hai bạn kết nối lại. Không mạng xã hội, không phô bày — chỉ có hai bạn.'
-              : 'Amor AI is a small, warm shared journal: count your days together, keep the little things worth remembering, and reconnect with one gentle question a day. No social feed, no showing off — just the two of you.'}
+              ? 'Duoly là một cuốn sổ chung nhỏ và ấm: đếm ngày bên nhau, giữ lại những điều nhỏ đáng nhớ, và một câu hỏi mỗi ngày để hai bạn kết nối lại. Không mạng xã hội, không phô bày — chỉ có hai bạn.'
+              : 'Duoly is a small, warm shared journal: count your days together, keep the little things worth remembering, and reconnect with one gentle question a day. No social feed, no showing off — just the two of you.'}
           </p>
           <div
             style={{
@@ -192,7 +192,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               width: 340,
               height: 340,
               borderRadius: 999,
-              background: 'var(--am-lovec)',
+              background: 'var(--du-lovec)',
               opacity: 0.4,
               filter: 'blur(70px)',
               top: '6%',
@@ -205,7 +205,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               width: 260,
               height: 260,
               borderRadius: 999,
-              background: 'var(--am-warmc)',
+              background: 'var(--du-warmc)',
               opacity: 0.3,
               filter: 'blur(70px)',
               bottom: '4%',
@@ -262,7 +262,7 @@ export function HomePage({ lang }: { lang: Lang }) {
                     margin: 0,
                     fontSize: 14.5,
                     lineHeight: '23px',
-                    color: ink ?? 'var(--am-ink2)',
+                    color: ink ?? 'var(--du-ink2)',
                   }}
                 >
                   {copy.body}
@@ -303,12 +303,12 @@ export function HomePage({ lang }: { lang: Lang }) {
               margin: 0,
               fontSize: 16,
               lineHeight: '26px',
-              color: 'var(--am-ink2)',
+              color: 'var(--du-ink2)',
             }}
           >
             {vi
-              ? 'Mọi thứ trong Amor AI đều xoay quanh những gì hai bạn thật sự tạo ra — không thông báo ồn ào, không con số ép buộc.'
-              : 'Everything in Amor AI revolves around what the two of you actually create — no noisy notifications, no guilt-tripping numbers.'}
+              ? 'Mọi thứ trong Duoly đều xoay quanh những gì hai bạn thật sự tạo ra — không thông báo ồn ào, không con số ép buộc.'
+              : 'Everything in Duoly revolves around what the two of you actually create — no noisy notifications, no guilt-tripping numbers.'}
           </p>
         </div>
         <div style={autoGrid(300)}>
@@ -316,7 +316,7 @@ export function HomePage({ lang }: { lang: Lang }) {
             <div
               key={feature.title}
               style={{
-                background: 'var(--am-card)',
+                background: 'var(--du-card)',
                 borderRadius: 24,
                 padding: 26,
                 display: 'flex',
@@ -346,7 +346,7 @@ export function HomePage({ lang }: { lang: Lang }) {
                   margin: 0,
                   fontSize: 14,
                   lineHeight: '22px',
-                  color: 'var(--am-ink2)',
+                  color: 'var(--du-ink2)',
                 }}
               >
                 {feature.body}
@@ -360,10 +360,10 @@ export function HomePage({ lang }: { lang: Lang }) {
       <section style={section}>
         <div
           style={{
-            background: 'var(--am-soft)',
+            background: 'var(--du-soft)',
             borderRadius: 28,
             padding: 'clamp(32px, 5vw, 56px)',
-            color: 'var(--am-ink)',
+            color: 'var(--du-ink)',
           }}
         >
           <div
@@ -376,7 +376,7 @@ export function HomePage({ lang }: { lang: Lang }) {
             }}
           >
             <span style={eyebrow}>
-              {vi ? 'LỜI HỨA CỦA AMOR AI' : 'THE AMOR AI PROMISE'}
+              {vi ? 'LỜI HỨA CỦA DUOLY' : 'THE DUOLY PROMISE'}
             </span>
             <h2
               style={{
@@ -396,7 +396,7 @@ export function HomePage({ lang }: { lang: Lang }) {
                 margin: 0,
                 fontSize: 15.5,
                 lineHeight: '25px',
-                color: 'var(--am-ink2)',
+                color: 'var(--du-ink2)',
               }}
             >
               {vi
@@ -413,7 +413,7 @@ export function HomePage({ lang }: { lang: Lang }) {
                 <MaterialIcon
                   name={promise.icon}
                   size={24}
-                  color="var(--am-love)"
+                  color="var(--du-love)"
                 />
                 <h3 style={{ margin: 0, fontSize: 16, fontWeight: 600 }}>
                   {promise.title}
@@ -423,7 +423,7 @@ export function HomePage({ lang }: { lang: Lang }) {
                     margin: 0,
                     fontSize: 13.5,
                     lineHeight: '21px',
-                    color: 'var(--am-ink2)',
+                    color: 'var(--du-ink2)',
                   }}
                 >
                   {promise.body}
@@ -445,7 +445,7 @@ export function HomePage({ lang }: { lang: Lang }) {
             marginBottom: 36,
           }}
         >
-          <span style={eyebrow}>AMOR PREMIUM</span>
+          <span style={eyebrow}>DUOLY PREMIUM</span>
           <h2
             style={{
               margin: 0,
@@ -464,7 +464,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               margin: 0,
               fontSize: 16,
               lineHeight: '26px',
-              color: 'var(--am-ink2)',
+              color: 'var(--du-ink2)',
             }}
           >
             {vi
@@ -478,7 +478,7 @@ export function HomePage({ lang }: { lang: Lang }) {
             borderRadius: 28,
             padding: 'clamp(28px, 4vw, 44px)',
             boxShadow:
-              '0 2px 10px var(--am-shadow1), 0 12px 32px var(--am-shadow2)',
+              '0 2px 10px var(--du-shadow1), 0 12px 32px var(--du-shadow2)',
           }}
         >
           <div style={{ ...autoGrid(250, 20), marginBottom: 32 }}>
@@ -612,7 +612,7 @@ export function HomePage({ lang }: { lang: Lang }) {
             style={{
               fontSize: 14,
               fontWeight: 600,
-              color: 'var(--am-link)',
+              color: 'var(--du-link)',
               textDecoration: 'none',
             }}
           >
@@ -625,7 +625,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               key={post.slug}
               href={`/blog/${post.slug}`}
               style={{
-                background: 'var(--am-card)',
+                background: 'var(--du-card)',
                 borderRadius: 24,
                 padding: 26,
                 display: 'flex',
@@ -655,7 +655,7 @@ export function HomePage({ lang }: { lang: Lang }) {
                   fontSize: 18,
                   lineHeight: '26px',
                   fontWeight: 600,
-                  color: 'var(--am-ink)',
+                  color: 'var(--du-ink)',
                 }}
               >
                 {post.title}
@@ -665,7 +665,7 @@ export function HomePage({ lang }: { lang: Lang }) {
                   margin: 0,
                   fontSize: 13.5,
                   lineHeight: '21px',
-                  color: 'var(--am-ink2)',
+                  color: 'var(--du-ink2)',
                 }}
               >
                 {post.homeExcerpt}
@@ -674,7 +674,7 @@ export function HomePage({ lang }: { lang: Lang }) {
                 style={{
                   marginTop: 'auto',
                   fontSize: 12,
-                  color: 'var(--am-ink3)',
+                  color: 'var(--du-ink3)',
                 }}
               >
                 {post.readTime}
@@ -688,7 +688,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       <section id="download" style={section}>
         <div
           style={{
-            background: 'var(--am-lovec)',
+            background: 'var(--du-lovec)',
             borderRadius: 28,
             padding: 'clamp(36px, 5vw, 64px)',
             display: 'flex',
@@ -700,7 +700,7 @@ export function HomePage({ lang }: { lang: Lang }) {
         >
           <Image
             src={SITE.icon}
-            alt="Amor AI icon"
+            alt="Duoly icon"
             width={64}
             height={64}
             style={{
@@ -715,7 +715,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               lineHeight: 1.2,
               fontWeight: 700,
               letterSpacing: '-0.015em',
-              color: 'var(--am-onlovec)',
+              color: 'var(--du-onlovec)',
             }}
           >
             {vi ? 'Bắt đầu cuốn sổ của hai bạn' : 'Start your shared book'}
@@ -725,7 +725,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               margin: 0,
               fontSize: 16,
               lineHeight: '26px',
-              color: 'var(--am-onlovec)',
+              color: 'var(--du-onlovec)',
               opacity: 0.85,
               maxWidth: 480,
             }}

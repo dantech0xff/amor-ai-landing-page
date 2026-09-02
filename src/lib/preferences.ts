@@ -8,7 +8,7 @@ export type Theme = 'paper' | 'dusk';
 const isTheme = (value: string): value is Theme =>
   value === 'paper' || value === 'dusk';
 
-const themeStore = createPersistedStore<Theme>('amor-theme', 'paper', isTheme);
+const themeStore = createPersistedStore<Theme>('duoly-theme', 'paper', isTheme);
 
 export function useTheme() {
   const theme = useSyncExternalStore(

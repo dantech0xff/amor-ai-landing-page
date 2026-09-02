@@ -21,7 +21,7 @@ const headingStyle = {
   margin: '20px 0 0',
   fontSize: 19,
   fontWeight: 700,
-  color: 'var(--am-ink)',
+  color: 'var(--du-ink)',
 } as const;
 
 const paragraphStyle = { margin: 0 } as const;
@@ -54,7 +54,7 @@ export function LegalPage({
               fontSize: 11,
               fontWeight: 600,
               letterSpacing: '0.16em',
-              color: 'var(--am-labelstrong)',
+              color: 'var(--du-labelstrong)',
             }}
           >
             {doc.eyebrow}
@@ -70,7 +70,7 @@ export function LegalPage({
           >
             {doc.title}
           </h1>
-          <p style={{ margin: 0, fontSize: 14, color: 'var(--am-ink3)' }}>
+          <p style={{ margin: 0, fontSize: 14, color: 'var(--du-ink3)' }}>
             {doc.meta}
           </p>
         </div>
@@ -78,7 +78,7 @@ export function LegalPage({
         {doc.summary && (
           <div
             style={{
-              background: 'var(--am-quietc)',
+              background: 'var(--du-quietc)',
               borderRadius: 20,
               padding: '22px 26px',
               marginBottom: 28,
@@ -89,7 +89,7 @@ export function LegalPage({
                 margin: 0,
                 fontSize: 14.5,
                 lineHeight: '24px',
-                color: 'var(--am-onquietc)',
+                color: 'var(--du-onquietc)',
               }}
             >
               {doc.summary}
@@ -101,7 +101,7 @@ export function LegalPage({
           style={{
             fontSize: 15,
             lineHeight: '26px',
-            color: 'var(--am-ink2)',
+            color: 'var(--du-ink2)',
             display: 'flex',
             flexDirection: 'column',
             gap: 8,
@@ -122,12 +122,12 @@ export function LegalPage({
         <div
           style={{
             marginTop: 36,
-            background: 'var(--am-inset)',
+            background: 'var(--du-inset)',
             borderRadius: 16,
             padding: '18px 22px',
             fontSize: 13.5,
             lineHeight: '21px',
-            color: 'var(--am-ink2)',
+            color: 'var(--du-ink2)',
           }}
         >
           {seeAlso}

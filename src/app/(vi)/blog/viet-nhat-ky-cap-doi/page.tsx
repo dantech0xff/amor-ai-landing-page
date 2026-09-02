@@ -121,7 +121,7 @@ export default function Page() {
       <div style={{ margin: '36px 0' }}>
         <AppCta
           title="Một cuốn sổ được thiết kế đúng như bài này"
-          body="Câu hỏi mỗi ngày, một dòng là đạt, không streak áp lực — Amor AI là chỗ cố định cho thói quen của hai bạn."
+          body="Câu hỏi mỗi ngày, một dòng là đạt, không streak áp lực — Duoly là chỗ cố định cho thói quen của hai bạn."
           action="Tải miễn phí"
         />
       </div>

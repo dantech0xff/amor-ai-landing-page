@@ -6,9 +6,9 @@ import { breadcrumbLd, graph, organizationLd, pageMetadata } from '@/lib/seo';
 export const metadata: Metadata = pageMetadata({
   lang: 'vi',
   path: '/team',
-  title: 'Team — 1010 Creative, studio đứng sau Amor AI',
+  title: 'Team — 1010 Creative, studio đứng sau Duoly',
   description:
-    'Gặp đội ngũ 1010 Creative đứng sau Amor AI — a couple app: sản phẩm, kỹ thuật, thiết kế và niềm tin rằng sự riêng tư của cặp đôi đáng được nâng niu.',
+    'Gặp đội ngũ 1010 Creative đứng sau Duoly — a couple app: sản phẩm, kỹ thuật, thiết kế và niềm tin rằng sự riêng tư của cặp đôi đáng được nâng niu.',
 });
 
 export default function Page() {

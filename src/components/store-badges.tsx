@@ -85,8 +85,8 @@ function Caption({
 
 export function GooglePlayBadge({
   size = 'lg',
-  background = 'var(--am-love)',
-  color = 'var(--am-onlove)',
+  background = 'var(--du-love)',
+  color = 'var(--du-onlove)',
   boxShadow,
 }: {
   size?: BadgeSize;
@@ -131,10 +131,10 @@ export function GooglePlayBadge({
 export function AppStoreBadge({
   size = 'lg',
   caption,
-  background = 'var(--am-inset)',
-  color = 'var(--am-ink2)',
-  glyphBackground = 'var(--am-card)',
-  glyphColor = 'var(--am-ink2)',
+  background = 'var(--du-inset)',
+  color = 'var(--du-ink2)',
+  glyphBackground = 'var(--du-card)',
+  glyphColor = 'var(--du-ink2)',
 }: {
   size?: BadgeSize;
   caption: string;

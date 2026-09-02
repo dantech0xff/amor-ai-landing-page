@@ -135,7 +135,7 @@ export default function Page() {
       <div style={{ margin: '36px 0' }}>
         <AppCta
           title="Không cần nhớ 36 câu"
-          body="Amor AI gợi một câu hỏi mỗi ngày để hai bạn viết lại câu trả lời — thành một cuốn sổ chung."
+          body="Duoly gợi một câu hỏi mỗi ngày để hai bạn viết lại câu trả lời — thành một cuốn sổ chung."
           action="Tải miễn phí"
         />
       </div>

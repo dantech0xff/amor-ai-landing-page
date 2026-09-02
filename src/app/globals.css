@@ -1,64 +1,64 @@
 /*
- * Amor AI — Peach Soda Love design tokens.
+ * Duoly — Peach Soda Love design tokens.
  * Paper (mặc định) và Dusk (data-theme="dusk" trên <html>).
  * Chỉ khai báo các token mà giao diện thực sự dùng.
  */
 :root {
-  --am-canvas: #FFF8F3;
-  --am-card: #FFFFFF;
-  --am-soft: #FFE5EB;
-  --am-inset: #FFF0F3;
-  --am-butter: #FFF6E2;
-  --am-peachpaper: #FFEFE7;
-  --am-ink: #4A1530;
-  --am-ink2: #6B4050;
-  --am-ink3: #A26E80;
-  --am-love: #FF4D79;
-  --am-onlove: #FFFFFF;
-  --am-lovec: #FFB5C6;
-  --am-onlovec: #4A1530;
-  --am-warmc: #FFD76A;
-  --am-onwarmc: #4A1530;
-  --am-quietc: #BFE7D0;
-  --am-onquietc: #244438;
-  --am-assist: #E3ECFF;
-  --am-onassist: #0B5BD3;
-  --am-link: #B82F59;
-  --am-labelstrong: #B3204C;
-  --am-premium: #8A5A00;
-  --am-shadow1: rgba(74, 21, 48, 0.06);
-  --am-shadow2: rgba(74, 21, 48, 0.05);
-  --am-divider: rgba(74, 21, 48, 0.07);
-  --am-navglass: rgba(255, 248, 243, 0.86);
+  --du-canvas: #FFF8F3;
+  --du-card: #FFFFFF;
+  --du-soft: #FFE5EB;
+  --du-inset: #FFF0F3;
+  --du-butter: #FFF6E2;
+  --du-peachpaper: #FFEFE7;
+  --du-ink: #4A1530;
+  --du-ink2: #6B4050;
+  --du-ink3: #A26E80;
+  --du-love: #FF4D79;
+  --du-onlove: #FFFFFF;
+  --du-lovec: #FFB5C6;
+  --du-onlovec: #4A1530;
+  --du-warmc: #FFD76A;
+  --du-onwarmc: #4A1530;
+  --du-quietc: #BFE7D0;
+  --du-onquietc: #244438;
+  --du-assist: #E3ECFF;
+  --du-onassist: #0B5BD3;
+  --du-link: #B82F59;
+  --du-labelstrong: #B3204C;
+  --du-premium: #8A5A00;
+  --du-shadow1: rgba(74, 21, 48, 0.06);
+  --du-shadow2: rgba(74, 21, 48, 0.05);
+  --du-divider: rgba(74, 21, 48, 0.07);
+  --du-navglass: rgba(255, 248, 243, 0.86);
 }
 
 :root[data-theme='dusk'] {
-  --am-canvas: #0F0D0E;
-  --am-card: #1C1C1E;
-  --am-soft: #242426;
-  --am-inset: #2C2C2E;
-  --am-butter: #1F1F21;
-  --am-peachpaper: #292A2C;
-  --am-ink: #E8E2DE;
-  --am-ink2: #B3A6AB;
-  --am-ink3: #9A9095;
-  --am-love: #FF8EAA;
-  --am-onlove: #4A1530;
-  --am-lovec: #5C2A3E;
-  --am-onlovec: #FFE5EB;
-  --am-warmc: #5A3B28;
-  --am-onwarmc: #FFE7D9;
-  --am-quietc: #2B4A3C;
-  --am-onquietc: #DDF5E7;
-  --am-assist: #23364F;
-  --am-onassist: #D3E1FF;
-  --am-link: #FFB5C6;
-  --am-labelstrong: #FFB3C4;
-  --am-premium: #FFD76A;
-  --am-shadow1: rgba(0, 0, 0, 0.45);
-  --am-shadow2: rgba(0, 0, 0, 0.35);
-  --am-divider: rgba(232, 226, 222, 0.1);
-  --am-navglass: rgba(28, 28, 30, 0.84);
+  --du-canvas: #0F0D0E;
+  --du-card: #1C1C1E;
+  --du-soft: #242426;
+  --du-inset: #2C2C2E;
+  --du-butter: #1F1F21;
+  --du-peachpaper: #292A2C;
+  --du-ink: #E8E2DE;
+  --du-ink2: #B3A6AB;
+  --du-ink3: #9A9095;
+  --du-love: #FF8EAA;
+  --du-onlove: #4A1530;
+  --du-lovec: #5C2A3E;
+  --du-onlovec: #FFE5EB;
+  --du-warmc: #5A3B28;
+  --du-onwarmc: #FFE7D9;
+  --du-quietc: #2B4A3C;
+  --du-onquietc: #DDF5E7;
+  --du-assist: #23364F;
+  --du-onassist: #D3E1FF;
+  --du-link: #FFB5C6;
+  --du-labelstrong: #FFB3C4;
+  --du-premium: #FFD76A;
+  --du-shadow1: rgba(0, 0, 0, 0.45);
+  --du-shadow2: rgba(0, 0, 0, 0.35);
+  --du-divider: rgba(232, 226, 222, 0.1);
+  --du-navglass: rgba(28, 28, 30, 0.84);
 }
 
 * {
@@ -72,14 +72,14 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--am-canvas);
-  color: var(--am-ink);
+  background: var(--du-canvas);
+  color: var(--du-ink);
   font-family: var(--font-be-vietnam-pro), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: var(--am-link);
+  color: var(--du-link);
 }
 
 a:hover {
@@ -120,7 +120,7 @@ details[open] .faq-chevron {
   font-family: var(--font-lora), Georgia, serif;
   font-size: 17px;
   line-height: 30px;
-  color: var(--am-ink);
+  color: var(--du-ink);
 }
 
 .article-body h2 {
@@ -158,7 +158,7 @@ details[open] .faq-chevron {
 }
 
 .article-body .callout {
-  background: var(--am-butter);
+  background: var(--du-butter);
   border-radius: 16px;
   padding: 18px 22px;
   margin: 0 0 28px;
@@ -172,11 +172,11 @@ details[open] .faq-chevron {
 }
 
 .article-body details {
-  background: var(--am-card);
+  background: var(--du-card);
   border-radius: 16px;
   padding: 16px 20px;
   margin-bottom: 10px;
-  box-shadow: 0 2px 8px var(--am-shadow1);
+  box-shadow: 0 2px 8px var(--du-shadow1);
 }
 
 .article-body summary {
@@ -189,7 +189,7 @@ details[open] .faq-chevron {
   margin: 10px 0 0;
   font-size: 15.5px;
   line-height: 26px;
-  color: var(--am-ink2);
+  color: var(--du-ink2);
 }
 
 /* Thanh điều hướng: dưới 720px gom liên kết và nút tải app vào panel thu gọn. */
