@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "amorai.dantech.academy" }],
+      "destination": "https://duoly.dantech.academy/:path*",
+      "permanent": true
+    }
+  ]
+}
